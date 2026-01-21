@@ -13,7 +13,7 @@
 
 
  <header class="header">
-    <div class="logo">Guilherme Ribeiro</div>
+    <div class="logo text-gradient">Guilherme Ribeiro</div>
 
     <nav class="nav">
         <a href="#inicio">Início</a>
@@ -30,15 +30,15 @@
 
   <section id="inicio" class="inicio">
     <div class="inicio-text">
-        <h2>Esse aí sou eu.</h2>
+        <h2 class="text-gradient">Esse aí sou eu.</h2>
         <p>
-            Dá pra notar que eu precisava dar um jeito na minha vida. <br>
-            <h2>E EU REALMENTE DEI!</h2>
+            Dá pra notar que eu precisava <br>dar um jeito na minha vida. <br>
+            <h2 class="text-gradient">E EU REALMENTE DEI!</h2>
         </p>
     </div>
 
     <div class="inicio-img">
-        <img src="#" alt="Foto Principal">
+        <img src="images/foto-home.png" alt="Foto Principal">
     </div>
   </section>
 
@@ -47,9 +47,10 @@
 
 
    <section id="manifesto" class="manifesto">
-    <p class="manifesto-text">
-        Eu nunca fui só <span>lógico ou só criativo...</span>
+    <p class="manifesto-text text-gradient">
+        Eu nunca fui só lógico ou só criativo...
     </p>
+    </section>
 
 
   <!-- SOBRE MIM -->
@@ -59,7 +60,7 @@
     <div class="sobre-container">
 
         <div class="sobre-img">
-            <img src="#" alt="Foto Sobre Mim">
+            <img src="images/foto-sobre.png" alt="Foto Sobre Mim">
         </div>
 
         <div class="sobre-text">
@@ -87,6 +88,7 @@
 
 
   <sectio id="projetos" class="projetos">
+    <div class="container">
     <div class="projetos-text">
         <p class="projetos-text-grande">
             Tudo começou <span>errado</span>
@@ -105,7 +107,7 @@
 
             <!-- PROJETO 1 -->
              <div class="project-card">
-                <img src="#" alt="Projeto 1">
+                <img src="images/projetos.png" alt="Projeto 1">
 
                 <div class="project-overlay">
                     <p>
@@ -122,7 +124,7 @@
 
                    <!-- PROJETO 2 -->
       <div class="project-card">
-        <img src="assets/imagens/projeto2.png" alt="Projeto 2">
+        <img src="images/projetos.png" alt="Projeto 2">
 
         <div class="project-overlay">
           <p>
@@ -140,14 +142,17 @@
 
       <!-- PROJETO 3 -->
       <div class="project-card">
-        <img src="assets/imagens/projeto3.png" alt="Projeto 3">
+        <div class="project-media">
+            <img src="images/projetos.png" alt="Projeto 3">
 
-        <div class="project-overlay">
-          <p>
-            Interface responsiva com foco em experiência do usuário
-            e boas práticas de layout.
-          </p>
-          <span>HTML • CSS • JavaScript</span>
+            <div class="project-overlay">
+                <p>
+                    Interface responsiva com foco em experiência do usuário
+                e boas práticas de layout.
+                </p>
+
+                <span>HTML • CSS • JavaScript</span>
+            </div>
         </div>
 
         <div class="project-buttons">
@@ -163,13 +168,14 @@
     <button class="carousel-btn next">&#10095;</button>
 
     </div>
+    </div>
   </section>
 
 
   <!-- CERTIFICADOS -->
 
 
-   <section id="estudos" class="estudos">
+   <section id="certificados" class="certificados">
 
   <p class="estudos-frase">
     Nem tudo veio só da prática.<br>
