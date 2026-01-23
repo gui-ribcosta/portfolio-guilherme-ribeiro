@@ -6,13 +6,18 @@
     <title>Guilherme Ribeiro</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
 </head>
 <body>
+
+  <div class="stars"></div>
+
     
-  <!-- CABEÇALHO -->
+<!-- ================= HEADER ================= -->
 
-
- <header class="header">
+<header class="header reveal">
     <div class="logo text-gradient">Guilherme Ribeiro</div>
 
     <nav class="nav">
@@ -22,251 +27,346 @@
         <a href="#certificados">Certificados</a>
         <a href="#contato">Contato</a>
     </nav>
- </header>
+</header>
 
+<!-- ================= INÍCIO ================= -->
 
-  <!-- INÍCIO -->
-
-
-  <section id="inicio" class="inicio">
-    <div class="inicio-text">
+<section id="inicio" class="inicio">
+    <div class="inicio-text reveal">
         <h2 class="text-gradient">Esse aí sou eu.</h2>
         <p>
             Dá pra notar que eu precisava <br>dar um jeito na minha vida. <br>
-            <h2 class="text-gradient">E EU REALMENTE DEI!</h2>
-        </p>
-    </div>
-
-    <div class="inicio-img">
-        <img src="images/foto-home.png" alt="Foto Principal">
-    </div>
-  </section>
-
-
-  <!-- FRASE IMPACTANTE -->
-
-
-   <section id="manifesto" class="manifesto">
-    <p class="manifesto-text text-gradient">
-        Eu nunca fui só lógico ou só criativo...
-    </p>
-    </section>
-
-
-  <!-- SOBRE MIM -->
-
-
-  <section id="sobre" class="sobre">
-    <div class="sobre-container">
-
-        <div class="sobre-img">
-            <img src="images/foto-sobre.png" alt="Foto Sobre Mim">
-        </div>
-
-        <div class="sobre-text">
-            <p class="sobre-text-impactante">
-                Sempre fiquei no meio.
-            </p>
-
-            <p class="sobre-text-impactante-2">
-            Testando. <span>Errando. Ajustando.</span>
-            </p>
-
-            <p class="resumo-text">
-              Sou estudante de <strong>Desenvolvimento de Sistemas</strong>,
-            focado em construir uma base sólida em programação.
-            Atualmente estudo HTML, CSS e JavaScript, sempre buscando
-            entender o porquê por trás das soluções.
-            </p>
-        </div>
-
-    </div>
-  </section>
-
-
-  <!-- PROJETOS -->
-
-
-  <section id="projetos" class="projetos">
-    <div class="container">
-    <div class="projetos-text">
-        <p class="projetos-text-grande">
-            Tudo começou <span>errado</span>
         </p>
 
-        <p class="projetos text-pequeno">
-            Nada fazia sentido no começo. Código quebrava. Ideias falhavam.
-        </p>
+        <h2 class="text-gradient">E EU REALMENTE DEI!</h2>
+
+        <a href="files/Currículo_Guilherme_Tecnologia.pdf" download class="btn-curriculo">
+        Baixar Currículo
+        </a>
+
+        <a href="https://wa.me/5521980417869" target="_blank" class="btn-contato">
+        WhatsApp
+        </a>
     </div>
 
-    <div class="carrossel">
-
-        <button class="carrossel-btn-prev">&#10094;</button>
-
-        <div class="carrossel-track">
-
-            <!-- PROJETO 1 -->
-             <div class="project-card">
-                <div class="project-media">
-                    <img src="images/projetos.png" alt="Projeto 1">
-
-                    <div class="project-overlay">
-                        <p>
-                             Aplicação web focada em resolver um problema real, com lógica bem estruturada e interface simples.
-                        </p>
-                        <span>HTML - CSS - JavaScript</span>
-                     </div>
-                </div>
-
-                <div class="project-buttons">
-                    <a href="#" target="_blank">Github</a>
-                    <a href="#" target="_blank">Vercel</a>
-                </div>
-             </div>
-
-                   <!-- PROJETO 2 -->
-      <div class="project-card">
-        <div class="project-media">
-            <img src="images/projetos.png" alt="Projeto 2">
-
-            <div class="project-overlay">
-                <p>
-                Projeto desenvolvido para treinar manipulação de DOM
-                e organização de código.
-                </p>
-                <span>HTML • CSS • JavaScript</span>
-            </div>
-        </div>
-
-        <div class="project-buttons">
-          <a href="#" target="_blank">GitHub</a>
-          <a href="#" target="_blank">Vercel</a>
-        </div>
-      </div>
-
-      <!-- PROJETO 3 -->
-      <div class="project-card">
-        <div class="project-media">
-            <img src="images/projetos.png" alt="Projeto 3">
-
-            <div class="project-overlay">
-                <p>
-                    Interface responsiva com foco em experiência do usuário
-                e boas práticas de layout.
-                </p>
-
-                <span>HTML • CSS • JavaScript</span>
-            </div>
-        </div>
-
-        <div class="project-buttons">
-          <a href="#" target="_blank">GitHub</a>
-          <a href="#" target="_blank">Vercel</a>
-        </div>
-      </div>
-
-      <!-- Adicionar mais projetos aqui -->
-
+    <div class="inicio-img reveal">
+        <img src="images/exemplo_home.png" alt="Foto Principal">
     </div>
-
-    <button class="carousel-btn next">&#10095;</button>
-
-    </div>
-    </div>
-  </section>
-
-
-  <!-- CERTIFICADOS -->
-
-
-   <section id="certificados" class="certificados">
-
-  <p class="estudos-frase">
-    Nem tudo veio só da prática.<br>
-    Estudar muito também fez parte da minha trajetória.
-  </p>
-
-  <div class="estudos-carrosseis">
-
-    <!-- CARROSSEL CURSOS -->
-
-    <div class="estudos-bloco">
-      <h3>Cursos</h3>
-
-      <div class="mini-carrossel">
-        <button class="mini-btn prev">&#10094;</button>
-
-        <div class="mini-track cursos">
-          <img src="assets/imagens/curso1.png" alt="Curso 1">
-          <img src="assets/imagens/curso2.png" alt="Curso 2">
-          <img src="assets/imagens/curso3.png" alt="Curso 3">
-        </div>
-
-        <button class="mini-btn next">&#10095;</button>
-      </div>
-    </div>
-
-    <!-- CARROSSEL CERTIFICAÇÕES -->
-
-    <div class="estudos-bloco">
-      <h3>Certificações</h3>
-
-      <div class="mini-carrossel">
-        <button class="mini-btn prev">&#10094;</button>
-
-        <div class="mini-track certificacoes">
-          <img src="assets/imagens/aws.png" alt="AWS">
-          <img src="assets/imagens/azure.png" alt="Azure">
-          <img src="assets/imagens/outra.png" alt="Certificação">
-        </div>
-
-        <button class="mini-btn next">&#10095;</button>
-      </div>
-    </div>
-
-  </div>
 </section>
 
 
-  <!-- CONTATO -->
+
+<!-- ================= FRASE IMPACTANTE ================= -->
 
 
-<section id="contato" class="contato">
+<section id="manifesto" class="manifesto reveal">
+    <p class="manifesto-text text-gradient">
+        Eu nunca fui só lógico ou só criativo...
+    </p>
+</section>
 
-  <p class="contato-historia">
+
+<!-- ================= SOBRE MIM ================= -->
+
+<section id="sobre" class="sobre reveal">
+    <div class="sobre-container">
+
+        <div class="sobre-img reveal">
+            <img src="images/exemplo_sobre.png" alt="Foto Sobre Mim">
+        </div>
+
+        <div class="sobre-text reveal">
+            <p class="sobre-text-impactante text-gradient">
+                Sempre fiquei no meio.
+            </p>
+
+            <p class="sobre-text-impactante-2 text-gradient">
+            Testando. Errando. Ajustando.
+            </p>
+
+            <p class="resumo-text">
+              Sou estudante de <strong>Desenvolvimento de Sistemas</strong>, com experiência prática em HTML, CSS, JavaScript e Git. Já atuei em atendimento bilíngue, gerência de padaria e estágios em grandes empresas, desenvolvendo habilidades de comunicação, organização e resolução de problemas.
+              Busco oportunidades de desenvolvimento web e projetos que me permitam combinar lógica e criatividade.
+            </p>
+
+            <!-- Redes sociais -->
+            <div class="social-icons reveal">
+                <a href="https://instagram.com/gui_ribcosta" target="_blank"><i data-lucide="instagram"></i></a>
+                <a href="https://linkedin.com/in/guiribcosta" target="_blank"><i data-lucide="linkedin"></i></a>
+                <a href="https://github.com/gui-ribcosta" target="_blank"><i data-lucide="github"></i></a>
+                <a href="mailto:grcm171914@gmail.com"><i data-lucide="mail"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider reveal"></div>
+
+
+<!-- ================= PROJETOS ================= -->
+
+<section id="projetos" class="projetos reveal">
+    <div class="container">
+        <div class="projetos-text reveal">
+            <p class="projetos-text-grande text-gradient">
+                Tudo começou errado
+            </p>
+
+            <p class="projetos-text-pequeno">
+                Nada fazia sentido no começo. Código quebrava. Ideias falhavam.
+            </p>
+
+            <p class="projetos-text-impact text-gradient">
+                Mas ai os projetos começaram a falar por mim!
+            </p>
+        </div>
+
+        <div class="carrossel reveal">
+            <button class="carrossel-btn-prev">&#10094;</button>
+
+            <div class="carrossel-track">
+    <!-- PROJETO 1 -->
+    <div class="project-wrapper reveal">
+        <div class="project-card">
+            <div class="project-media">
+                <img src="images/projetos.png" alt="Projeto 1">
+                <div class="project-overlay">
+                    <p>
+                        Aplicação web focada em resolver um problema real, com lógica bem estruturada e interface simples.
+                    </p>
+                    <span>HTML - CSS - JavaScript</span>
+                </div>
+            </div>
+            <div class="project-buttons">
+                <a href="#" target="_blank">Github</a>
+                <a href="#" target="_blank">Vercel</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROJETO 2 -->
+    <div class="project-wrapper reveal">
+        <div class="project-card">
+            <div class="project-media">
+                <img src="images/projetos.png" alt="Projeto 2">
+                <div class="project-overlay">
+                    <p>
+                        Projeto desenvolvido para treinar manipulação de DOM e organização de código.
+                    </p>
+                    <span>HTML • CSS • JavaScript</span>
+                </div>
+            </div>
+            <div class="project-buttons">
+                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank">Vercel</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROJETO 3 -->
+    <div class="project-wrapper reveal">
+        <div class="project-card">
+            <div class="project-media">
+                <img src="images/projetos.png" alt="Projeto 3">
+                <div class="project-overlay">
+                    <p>
+                        Interface responsiva com foco em experiência do usuário e boas práticas de layout.
+                    </p>
+                    <span>HTML • CSS • JavaScript</span>
+                </div>
+            </div>
+            <div class="project-buttons">
+                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank">Vercel</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            <button class="carousel-btn next">&#10095;</button>
+        </div>
+    </div>
+</section>
+
+<div class="section-divider reveal"></div>
+
+
+<!-- ================= CERTIFICADOS ================= -->
+<section id="certificados" class="certificados reveal">
+  <div class="container">
+
+    <!-- TEXTO PRINCIPAL -->
+    <div class="estudos-text reveal">
+      <p class="estudos-text-grande text-gradient">
+        Nem tudo veio só da prática
+      </p>
+      <p class="estudos-text-pequeno">
+        Estudar muito também fez parte da minha trajetória.
+      </p>
+    </div>
+
+    <div class="estudos-carrosseis reveal">
+
+      <!-- ===== CURSOS ===== -->
+      <div class="estudos-bloco reveal">
+        <h3 class="Titulo cursos text-gradient">Cursos</h3>
+        <div class="mini-carrossel reveal">
+          <button class="mini-btn prev">&#10094;</button>
+          <div class="mini-track cursos">
+            
+            <!-- CURSO 1 -->
+            <div class="mini-card-wrapper reveal">
+              <div class="mini-card">
+                <div class="mini-media">
+                  <img src="images/projetos.png" alt="Curso HTML e CSS">
+                  <div class="mini-overlay">
+                    <p>Fundamentos sólidos de HTML semântico e CSS moderno.</p>
+                    <span>HTML • CSS</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CURSO 2 -->
+            <div class="mini-card-wrapper reveal">
+              <div class="mini-card">
+                <div class="mini-media">
+                  <img src="images/projetos.png" alt="Curso JavaScript">
+                  <div class="mini-overlay">
+                    <p>Manipulação de DOM, lógica e eventos.</p>
+                    <span>JavaScript</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CURSO 3 -->
+            <div class="mini-card-wrapper reveal">
+              <div class="mini-card">
+                <div class="mini-media">
+                  <img src="images/projetos.png" alt="Curso Git">
+                  <div class="mini-overlay">
+                    <p>Versionamento de código e fluxo profissional.</p>
+                    <span>Git • GitHub</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <button class="mini-btn next">&#10095;</button>
+        </div>
+      </div>
+
+      <!-- ===== CERTIFICAÇÕES ===== -->
+      <div class="estudos-bloco reveal">
+        <h3 class="Certificacoes text-gradient">Certificações</h3>
+        <div class="mini-carrossel reveal">
+          <button class="mini-btn prev">&#10094;</button>
+          <div class="mini-track certificacoes">
+
+            <!-- CERTIFICAÇÃO 1 -->
+            <div class="mini-card-wrapper reveal">
+              <div class="mini-card">
+                <div class="mini-media">
+                  <img src="images/projetos.png" alt="Certificação AWS">
+                  <div class="mini-overlay">
+                    <p>Fundamentos de cloud computing e serviços AWS.</p>
+                    <span>AWS</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CERTIFICAÇÃO 2 -->
+            <div class="mini-card-wrapper reveal">
+              <div class="mini-card">
+                <div class="mini-media">
+                  <img src="images/projetos.png" alt="Certificação Azure">
+                  <div class="mini-overlay">
+                    <p>Conceitos de nuvem e infraestrutura Microsoft.</p>
+                    <span>Azure</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CERTIFICAÇÃO 3 -->
+            <div class="mini-card-wrapper reveal">
+              <div class="mini-card">
+                <div class="mini-media">
+                  <img src="images/projetos.png" alt="Certificação Web">
+                  <div class="mini-overlay">
+                    <p>Boas práticas em desenvolvimento web.</p>
+                    <span>Web</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <button class="mini-btn next">&#10095;</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider reveal"></div>
+
+
+<!-- ================= CONTATO ================= -->
+
+<section id="contato" class="contato reveal">
+
+  <p class="contato-historia text-gradient reveal">
     Ainda estou muito longe da perfeição.<br>
     E provavelmente nunca vou alcançá-la, porque isso não existe.<br><br>
     Mas estou sempre me esforçando, aprendendo e melhorando.
   </p>
 
-  <p class="contato-convite">
+  <p class="contato-convite reveal">
     Se quiser trocar uma ideia, ver meus projetos ou simplesmente conversar,
     fica à vontade pra me chamar.
   </p>
 
-  <div class="contato-links">
-    <a href="https://github.com/" target="_blank">GitHub</a>
-    <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
-    <a href="mailto:seuemail@email.com">Email</a>
-    <a href="#" target="_blank">Whatsapp</a>
+  <div class="contato-cards reveal">
+    <a href="mailto:grcm171914@gmail.com" class="contato-card reveal">
+      <i data-lucide="mail"></i>
+      <span>Email</span>
+    </a>
+    <a href="https://wa.me/5521980417869" class="contato-card reveal">
+      <i data-lucide="phone-call"></i>
+      <span>Whatsapp</span>
+    </a>
+    <a href="https://linkedin.com/" class="contato-card reveal">
+      <i data-lucide="linkedin"></i>
+      <span>LinkedIn</span>
+    </a>
+    <a href="https://instagram.com/" class="contato-card reveal">
+      <i data-lucide="instagram"></i>
+      <span>Instagram</span>
+    </a>
   </div>
+
 </section>
 
+<!-- ================= FOOTER ================= -->
 
-  <!-- FOOTER -->
-
-
-<footer class="footer">
+<footer class="footer reveal">
   <div class="footer-content">
-    <h3>Guilherme Costa</h3>
     <p>
       Em constante evolução. Aprendendo, errando e melhorando um pouco todos os dias.
     </p>
 
-    <div class="footer-links">
-      <a href="https://github.com/seu-github" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/seu-linkedin" target="_blank">LinkedIn</a>
-      <a href="mailto:seuemail@gmail.com">Email</a>
+    <div class="footer-nav">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre Mim</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#certificados">Certificados</a>
+        <a href="#contato">Contato</a>
     </div>
 
     <span class="footer-copy">
@@ -275,6 +375,10 @@
   </div>
 </footer>
 
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
 
 </body>
 </html>
