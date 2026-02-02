@@ -580,6 +580,78 @@ section {
   gap: 80px;
 }
 
+/* ================= BOTÕES DE AÇÃO ================= */
+
+.action-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+}
+
+/* Botão base */
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+
+  transition: all 0.35s cubic-bezier(.4,0,.2,1);
+  overflow: hidden;
+  min-width: 180px;
+}
+
+/* Ícone */
+.action-btn i {
+  font-size: 20px;
+  color: #c958e9;
+  transition: transform 0.35s ease;
+}
+
+/* Texto */
+.action-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  font-weight: 900
+  ;
+}
+
+.action-text strong {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.action-text span {
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+/* Hover */
+.action-btn:hover {
+  background: linear-gradient(135deg, #9a12d0, #c958e9);
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(154,18,208,0.5);
+}
+
+.action-btn:hover i {
+  transform: translateX(-4px) scale(1.1);
+  color: #ffffff;
+}
+
+/* Botão Voltar específico */
+.back-btn {
+  margin-bottom: 30px;
+}
+
+
 /* ================= SOBRE INTRO ================= */
 .sobre-intro {
   display: grid;
@@ -587,7 +659,7 @@ section {
   align-items: center;
   gap: 60px;
   padding: 60px 8%;
-  background: linear-gradient(135deg, rgba(112,35,135,0.05), rgba(0,0,0,0.03));
+  background: linear-gradient(135deg, rgba(112,35,135,0.15), rgba(0,0,0,0.9));
   border-radius: 18px;
 }
 
@@ -619,13 +691,10 @@ section {
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 12px;
-  background: linear-gradient(90deg, #9a12d0, #c958e9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .sobre-intro .sobre-text h2 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 20px;
   color: var(--text);
@@ -663,26 +732,23 @@ section {
 .timeline-section {
   position: relative;
   padding: 60px 8%;
-  background: linear-gradient(135deg, rgba(112,35,135,0.05), rgba(0,0,0,0.03));
   border-radius: 18px;
   margin: 40px 0;
   text-align: center;
+  background: linear-gradient(135deg, rgba(112,35,135,0.15), rgba(0,0,0,0.9));
 }
 
 .timeline-title {
   font-size: 2.8rem;
   font-weight: 800;
   margin-bottom: 10px;
-  background: linear-gradient(90deg, #9a12d0, #c958e9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .timeline-subtitle {
-  font-size: 1.3rem;
-  color: var(--text);
-  margin-bottom: 48px;
-  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text, #fff);
+  margin-bottom: 50px;
+  font-weight: 800;
 }
 
 .timeline-wrapper {
@@ -786,14 +852,14 @@ section {
   font-size: 1rem;
   color: var(--text, #fff);
   margin-bottom: 50px;
+  font-weight: 800;
 }
 
 /* Categoria com barra lateral */
 .stack-category {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 40px 0 20px;
+  margin: 40px 0 100px;
   position: relative;
 }
 
@@ -952,7 +1018,7 @@ section {
 
 .projetos-text-impact {
   font-size: 3rem;
-  font-weight: 900;
+  font-weight: 900px;
   line-height: 1.2;
   margin-top: 20px;
 }
@@ -965,6 +1031,11 @@ section {
   align-items: center;
   justify-content: flex-start;
   gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; /* cards "encaixam" ao scroll */
+  -webkit-overflow-scrolling: touch; /* smooth mobile */
+  width: 100%; /* garante que não passa da tela */
+  box-sizing: border-box;
 }
 
 /* SETAS AO LADO DO TEXTO */
@@ -1007,6 +1078,11 @@ section {
   min-width: 100%;
   display: flex;
   justify-content: center;
+  flex: 0 0 auto; /* não encolhe nem cresce automaticamente */
+  scroll-snap-align: start;
+  width: 90%; /* ocupa 90% da tela no mobile */
+  max-width: 300px; /* limita tamanho no desktop */
+  box-sizing: border-box;
 }
 
 /* ===== CARD GRANDE ===== */
@@ -1164,104 +1240,50 @@ section {
 }
 
 
-
-/* ================= CERTIFICAÇÕES ================= */
+/* ================= CERTIFICADOS ================= */
 
 #certificados {
-  scroll-margin-top: 70px;
-  background-color: #0e0e0e; /* fundo consistente da seção */
-  padding: 80px 10%;         /* padding menor */
-  min-height: auto;
-
-}
-
-.certificados {
   width: 100%;
-  padding: 60px 10%; /* reduz padding vertical */
-  min-height: 75vh;   /* ocupa a tela sem deixar muito espaço */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* centraliza verticalmente */
+  padding: 100px 0;
 }
 
-.certificados .container {
-  max-width: 1400px;
+#certificados .container {
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
+}
 
-  display: grid;
-  grid-template-columns: 1.4fr 1fr; /* mantém layout lado a lado */
+/* Layout geral */
+.certificados .container {
+  display: flex;
   align-items: center;
-  gap: 40px; /* reduz gap vertical */
+  gap: 80px;
 }
 
-/* TEXTO */
-
-.estudos-text {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 32px;
-}
-
-.estudos-text-grande {
-  font-size: 3rem;
-  font-weight: 900;
-  line-height: 1.1;
-  margin-bottom: 24px;
-  letter-spacing: -1px;}
-
-.estudos-text-pequeno {
-  margin-top: 30px;
-  font-size: 1.2rem;
-  color: var(--text);
-  max-width: 420px;
-
-  font-weight: 700;
-}
-
-.estudos-text-pequeno-2 {
-  font-size: 1.3rem;
-  color: var(--text);
-  gap: 20rem;
-  opacity: 0.9;
-}
-
-/* ===== UI ABAIXO DO TEXTO ===== */
-
-.cert-ui {
-  margin-top: 28px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* 🔥 CENTRALIZA TUDO */
-  gap: 14px;
-}
-
-/* SETAS */
-.carrossel-arrows {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-}
-
-/* INDICADORES */
-.carrossel-indicators {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-/* ===== CARD + BOTÕES ===== */
+/* ================= CARD (ESQUERDA) ================= */
 
 .cert-wrapper {
+  flex: 1;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 24px;
+}
+
+.cert-titulo {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: var(--accent);
+  text-align: center;
+}
+
+.cert-carousel {
+  display: flex;
 }
 
 /* CARD PRINCIPAL (MAIOR) */
 
 .cert-card-principal {
+  grid-area: card;
   display: flex;
   gap: 32px;
 
@@ -1304,55 +1326,11 @@ section {
   color: var(--text);
 }
 
-/* ===== BOTÕES ===== */
-
-.cert-btn {
-  background: rgba(255,255,255,0.08);
-  border: none;
-  color: var(--text);
-
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-
-  font-size: 1.4rem;
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition: 0.3s;
-}
-
-.cert-btn:hover {
-  background: var(--accent);
-  color: #000;
-}
-
-/* ===== TÍTULO ACIMA DO CARD ===== */
-
-.cert-titulo {
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-  color: var(--accent);
-  text-align: center;
-}
-
-/* ===== AGRUPA CARD + BOTÕES ===== */
-
-.cert-carousel {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-
-/* ===== BOTÃO VER TODOS ===== */
-
+/* Botão ver todos */
 .btn-ver-todos {
   margin-top: 12px;
   padding: 10px 26px;
+  text-align: center;
 
   color: var(--muted);
   text-decoration: none;
@@ -1369,13 +1347,72 @@ section {
 }
 
 
-/* ===== CONTAINER PRINCIPAL ===== */
+/* ================= TEXTO (DIREITA) ================= */
 
-.cert-wrapper {
+.estudos-text {
+  grid-area: texto;
   display: flex;
-  flex-direction: column; /* 🔥 ISSO RESOLVE */
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.estudos-text-grande {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+  margin-top: 0;
+}
+
+.estudos-text-pequeno {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  color: var(--text);
+  max-width: 420px;
+
+  font-weight: 700;
+}
+
+.estudos-text-pequeno-2 {
+  font-size: 1.3rem;
+  color: var(--text);
+  gap: 20rem;
+  opacity: 0.9;
+}
+
+/* ================= UI DO CARROSSEL ================= */
+.cert-ui {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 🔥 CENTRALIZA TUDO */
+  gap: 14px;
+}
+
+/* SETAS */
+.carrossel-arrows {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* INDICADORES */
+.carrossel-indicators {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 10px;
+}
+
+.carrossel-indicators {
+  display: flex;
+  gap: 8px;
+}
+
+.indicator.active {
+  background: #fff;
 }
 
 
@@ -1499,7 +1536,7 @@ section {
   color: var(--text);
 }
 
-/* TOPO */
+/* ================= TOPO ================= */
 .curriculo-header {
   position: fixed;
   top: 0;
@@ -1515,33 +1552,85 @@ section {
   z-index: 1000;
 }
 
+/* ================= BOTÃO VOLTAR ================= */
 .back-link {
   justify-self: start;
-  color: var(--text-muted);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 18px;
+  border-radius: 12px;
+
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+
+  color: #fff;
   text-decoration: none;
-  font-size: 0.95rem;
+
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+
+  transition: 
+    background 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    padding 0.35s ease;
 }
 
+/* Hover igual aos botões de modo */
+.back-link:hover {
+  background: linear-gradient(135deg, #9a12d0, #c958e9);
+  color: #ffffff;
+
+  padding: 10px 26px; /* expande */
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 28px rgba(154,18,208,0.45);
+}
+
+/* ================= TÍTULO CENTRAL ================= */
 .curriculo-title {
   justify-self: center;
   font-size: 1.1rem;
   font-weight: 900;
   opacity: 0.9;
+  color: #e01ceb;
 }
 
+/* ================= BOTÃO DOWNLOAD ================= */
 .btn-download {
   justify-self: end;
-  background: linear-gradient(135deg, #8a3aa1, #e7def7);
-  color: #000;
-  padding: 10px 18px;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  text-decoration: none;
-  display: flex;
+
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+
+  padding: 10px 20px;
+  border-radius: 12px;
+
+  font-size: 0.95rem;
   font-weight: 900;
+  text-decoration: none;
+
+  color: #000;
+  background: linear-gradient(135deg, #8a3aa1, #e7def7);
+
+  transition: 
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    padding 0.35s ease;
 }
+
+/* Hover consistente */
+.btn-download:hover {
+  transform: translateY(-2px);
+  padding: 10px 26px;
+  box-shadow: 0 12px 28px rgba(154,18,208,0.45);
+}
+
 
 /* CONTEÚDO */
 .curriculo-wrapper {
@@ -1566,170 +1655,627 @@ section {
 }
 
 
-/* ================= MENU MOBILE ================= */
-
-/* ================= HEADER ================= */
-
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 70px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 0 8%;
-  background: rgba(10,10,10,0.75);
-  backdrop-filter: blur(14px);
-  z-index: 100;
-}
-
-/* ================= BOTÃO MOBILE ================= */
-
-.mobile-toggle {
-  display: none;
-  width: 38px;
-  height: 34px;
-  border-radius: 10px;
-  border: none;
-  background: linear-gradient(135deg, #8a3aa1, #e7def7);
-  font-size: 1rem;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-/* ================= MENU MOBILE ================= */
-
-.mobile-nav {
-  position: fixed;
-  top: 70px;
-  left: 0;
-  width: 220px;
-  height: calc(100vh - 70px);
-  background: #111;
-
-  display: none;
-  flex-direction: column;
-  padding-top: 20px;
-  z-index: 99;
-}
-
-.mobile-nav a {
-  padding: 14px 24px;
-  color: var(--text);
-  text-decoration: none;
-}
-
-.mobile-nav.active {
-  display: flex;
-}
+/* ================= BREAKPOINTS ================= */
 
 
-/* ================= RESPONSIVO ================= */
+/* Desktop: >= 1200px (usa o CSS base, sem overrides) */
+
+/* Tablet: 768px até 1199px */
+@media (min-width: 768px) and (max-width: 1199px) {}
+
+/* Celular: até 767px */
+@media (max-width: 767px) {}
 
 
-/* ===== TABLET + MOBILE (estrutura geral) ===== */
 
-@media (max-width: 1024px) {
-  .nav {
-    display: none;
+/* ================= RESPONSIVIDADE TABLET ================= */
+
+
+@media (min-width: 768px) and (max-width: 1199px) {
+
+  /* HEADER */
+  .header {
+    padding: 0 4%;
   }
 
-  .mobile-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .nav a {
+    margin: 0 12px;
+    font-size: 0.65rem;
   }
 
+  /* INÍCIO */
   .inicio {
     grid-template-columns: 1fr;
-    min-height: auto;
+    text-align: center;
+    padding: 120px 6% 80px;
+  }
+
+  .inicio-text h2 {
+    font-size: 2.6rem;
+  }
+
+  .inicio-text p {
+    font-size: 1.4rem;
+  }
+
+  .inicio-actions {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* SOBRE */
+  .sobre-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
     text-align: center;
   }
 
-  .inicio-img {
-    display: flex;
-    justify-content: center;
-  }
-}
-
-/* ===== TABLET (481px → 1024px) ===== */
-@media (min-width: 481px) and (max-width: 1024px) {
-
-  .inicio {
-    padding-top: 140px; /* compensa header fixo */
-    padding-bottom: 80px;
-    gap: 50px;
+  .sobre-img img {
+    width: 360px;
+    height: auto;
   }
 
-  .inicio-text {
-    max-width: 700px;
-    margin: 0 auto;
+  /* PROJETOS */
+  .projetos .container {
+    grid-template-columns: 1fr;
+    gap: 60px;
   }
 
-  .inicio-text h2 {
-    font-size: 2.2rem;
-    line-height: 1.25;
-    margin-bottom: 12px;
+  .projetos-text-impact {
+    font-size: 2.4rem;
   }
 
-  .inicio-text p {
-    font-size: 1.3rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
+  /* CERTIFICADOS */
+  .certificados .container {
+    flex-direction: column;
+    gap: 60px;
   }
 
-  .inicio-img img {
-    width: 300px;
-    max-width: 90%;
+    .estudos-text {
+    order: 1;
+    text-align: center;
   }
 
-  .btn-curriculo,
-  .btn-contato {
-    display: inline-block;
-    margin: 12px 8px;
-  }
-}
-
-/* ===== MOBILE (até 480px) ===== */
-@media (max-width: 480px) {
-
-  .inicio {
-    padding-top: 120px; /* NÃO use 10px */
-    padding-bottom: 100px;
-    gap: 32px;
+  .cert-wrapper {
+    order: 2;
+    align-items: center;
   }
 
-  .inicio-text {
-    padding: 0 10px;
+  .estudos-text-grande {
+    font-size: 2rem;
+    text-align: center;
   }
 
-  .inicio-text h2 {
-    font-size: 1.6rem;
-    line-height: 1.3;
+  .estudos-text-pequeno{
+    text-align: center;
+    max-width: 100%;
   }
-
-  .inicio-text p {
-    font-size: 1.1rem;
-    line-height: 1.5;
-  }
-
-  .inicio-img img {
-    width: 240px;
+  
+  .estudos-text-pequeno-2 {
+    text-align: justify;
     max-width: 100%;
   }
 
-  .btn-curriculo,
-  .btn-contato {
+  .cert-card-principal {
     width: 100%;
-    max-width: 260px;
-    margin: 10px auto;
-    display: block;
+    max-width: 620px;
   }
+
+  .estudos-text-grande {
+    font-size: 2.4rem;
+  }
+
+  /* CONTATO */
+  .contato-historia {
+    font-size: 1.6rem;
+  }
+
 }
 
 
 
+/* ================= RESPONSIVIDADE CELULAR ================= */
+
+
+@media (max-width: 767px) {
+
+  /* HEADER */
+  .header {
+    grid-template-columns: auto auto;
+    height: 64px;
+    padding: 0 5%;
+  }
+
+  .header-center {
+    display: none;
+  }
+
+  /* INÍCIO */
+  .inicio {
+    flex-direction: column;
+    display: flex;
+    padding: 100px 6% 60px;
+    text-align: center;
+  }
+
+  .inicio-text {
+    order: 1;
+  }
+
+  .inicio-text h2 {
+    font-size: 2.1rem;
+  }
+
+  .inicio-text p {
+    font-size: 1.2rem;
+  }
+
+  .inicio-img {
+  order: 2;
+  margin:  0;
+  }
+
+  .inicio-actions {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    order: 3;
+    margin-top: 10px;
+  }
+
+  .inicio-text {
+    order: 1;
+  }
+
+
+  /* MANIFESTO */
+  .manifesto-text {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  /* SOBRE */
+  .sobre-container {
+    grid-template-columns: 1fr;
+    padding: 40px 6%;
+  }
+
+  .sobre-text-impactante {
+    font-size: 2rem;
+  }
+
+  .sobre-text-impactante-2 {
+    font-size: 1.6rem;
+  }
+
+  .social-icons {
+    gap: 20px;
+  }
+
+
+
+  /* CERTIFICADOS */
+  .certificados .container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .cert-card-principal {
+    flex-direction: column;
+    width: 100%;
+    padding: 24px;
+  }
+
+  .cert-card-principal img {
+    width: 100%;
+    height: 160px;
+  }
+
+    .estudos-text {
+    order: 1;
+    text-align: center;
+  }
+
+  .cert-wrapper {
+    order: 2;
+    align-items: center;
+  }
+
+  .estudos-text-grande {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .estudos-text-pequeno{
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .estudos-text-pequeno-2 {
+    text-align: justify;
+    max-width: 100%;
+  }
+
+  /* CONTATO */
+  .contato-historia {
+    font-size: 1.5rem;
+  }
+
+  .contato-convite {
+    font-size: 1.1rem;
+  }
+
+  .contato-card {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 20px 6%;
+  }
+}
+
+
+/* ================= RESPONSIVIDADE PROJETOS ================= */
+
+/* Tablet */
+@media (max-width: 1199px) and (min-width: 768px) {
+  /* Container principal */
+  .projetos .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  /* Texto */
+  .projetos-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .projetos-text-grande {
+    font-size: 2.4rem;
+  }
+
+  .projetos-text-pequeno {
+    font-size: 1.1rem;
+    max-width: 100%;
+  }
+
+  .projetos-text-impact {
+    font-size: 2.6rem;
+  }
+
+  /* Carrossel */
+  .project-wrapper {
+    max-width: 90%;
+  }
+
+  .project-card {
+    max-width: 600px;
+  }
+}
+
+/* Celular */
+@media (max-width: 767px) {
+  .projetos {
+    padding: 60px 6%;
+  }
+
+  .projetos .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  /* Texto */
+  .projetos-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .projetos-text-grande {
+    font-size: 1.8rem;
+  }
+
+  .projetos-text-pequeno {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .projetos-text-impact {
+    font-size: 2rem;
+  }
+
+  /* Carrossel */
+  .carrossel {
+    gap: 16px;
+  }
+
+  .project-wrapper {
+    min-width: 100%;
+    max-width: 280px; /* limita no celular */
+  }
+
+  .project-card {
+    max-width: 100%;
+  }
+
+  .project-media img {
+    height: 250px;
+  }
+
+  .project-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-ver-projeto {
+    padding: 12px 28px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ================= SEÇÕES COM ESPAÇO MÍNIMO (TABLET & CELULAR) ================= */
+
+/* Tablet */
+@media (max-width: 1199px) and (min-width: 768px) {
+  #sobre,
+  #projetos,
+  #certificados,
+  #contato {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    min-height: auto; /* não força altura extra */
+  }
+}
+
+/* Celular */
+@media (max-width: 767px) {
+  #sobre,
+  #projetos,
+  #certificados,
+  #contato {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: auto; /* altura ajusta ao conteúdo */
+  }
+
+  .inicio {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+
+  .projetos .container,
+  .certificados .container,
+  .contato-cards {
+    gap: 20px; /* reduz gaps internos do conteúdo */
+  }
+}
+
+/* ================= MANIFESTO RESPONSIVO ================= */
+
+/* Tablet */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .manifesto {
+    min-height: a ;       /* remove altura forçada */
+    padding: 80px 6%;       /* reduz padding vertical */
+  }
+
+  .manifesto-text {
+    font-size: clamp(2rem, 5vw, 3.5rem); /* ajusta tamanho do texto */
+  }
+}
+
+/* Celular */
+@media (max-width: 767px) {
+  .manifesto {
+    min-height: auto;       /* deixa altura só para o conteúdo */
+    padding: 40px 4%;       /* padding vertical bem menor */
+  }
+
+  .manifesto-text {
+    font-size: clamp(1.8rem, 6vw, 3rem); /* texto proporcional à tela */
+  }
+}
+
+/* ================= CARROSSEL RESPONSIVO ================= */
+
+/* Tablet */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .projetos .carrossel {
+    display: flex;
+    flex-direction: column; /* card acima, controles abaixo */
+    align-items: center;
+  }
+
+  .projetos .carrossel-ui {
+    order: 2; /* força UI abaixo dos cards */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+  }
+}
+
+/* Celular */
+@media (max-width: 767px) {
+  .projetos .carrossel {
+    display: flex;
+    flex-direction: column; /* card acima, controles abaixo */
+    align-items: center;
+  }
+
+  .projetos .carrossel-ui {
+    order: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+  }
+}
+
+/* Responsividade Projetos/Certificados */
+@media (max-width: 900px) {
+  /* Projetos */
+  .projetos .container {
+    grid-template-columns: 1fr; /* empilha conteúdo verticalmente */
+  }
+
+  .carrossel-ui {
+    flex-direction: column; /* garante que setas/indicadores fiquem abaixo */
+    align-items: center; /* centraliza */
+    margin-top: 20px;
+  }
+
+  .carrossel-arrows {
+    order: 1; /* opcional, garante a ordem correta */
+    margin-bottom: 12px;
+  }
+
+  .carrossel-indicators {
+    order: 2;
+  }
+}
+
+/* Para celular mais estreito */
+@media (max-width: 480px) {
+  .carrossel-ui {
+    gap: 10px; /* reduz espaçamento */
+  }
+
+  .carrossel-arrows button,
+  .carousel-btn.next {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+
+  .indicator {
+    width: 6px;
+    height: 6px;
+  }
+
+  .indicator.active {
+    width: 28px;
+    height: 5px;
+  }
+}
+
+/* ================= BOTÃO MOBILE ================= */
+.mobile-toggle {
+  display: none;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  color: #9b59b6; /* roxo */
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* ================= MENU MOBILE ================= */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  background: #9b59b6;
+  color: #fff;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.mobile-nav a,
+.mobile-nav button {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* ================= HEADER ================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: relative;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 1; /* garante que fique acima do menu */
+}
+
+/* Central nav - desktop */
+.header-center {
+  display: flex;
+  gap: 30px;
+}
+
+.header-center a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.header-center a:hover {
+  color: #9b59b6;
+}
+
+/* Header right */
+.header-right button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 900px) {
+  /* Botão mobile visível */
+  .mobile-toggle {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+  }
+
+  /* Logo centralizado abaixo do botão */
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Oculta nav desktop */
+  .header-center,
+  .header-right > .lang-toggle,
+  .header-right > .theme-toggle {
+    display: none;
+  }
+
+  /* Menu mobile visível quando ativo */
+  .mobile-nav.active {
+    display: flex;
+  }
+}
 

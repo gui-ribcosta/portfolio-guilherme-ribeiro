@@ -7,6 +7,9 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <script src="script.js"></script>
+
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -22,6 +25,7 @@
 
 
 <header class="header reveal">
+    <button class="mobile-toggle" id="mobileToggle">☰</button>
 
   <!-- ESQUERDA -->
   <div class="header-left">
@@ -50,9 +54,6 @@
     <i class='bx bx-sun'></i>
     <span class="theme-tooltip">TEMA CLARO</span>
   </button>
-
-  <!-- BOTÃO MOBILE -->
-  <button class="mobile-toggle">☰</button>
 </div>
 </header>
 
@@ -62,8 +63,9 @@
   <a href="#projetos">Projetos</a>
   <a href="#certificados">Certificados</a>
   <a href="#contato">Contato</a>
+  <button class="lang-toggle" id="langToggleMobile">🌐</button>
+  <button class="theme-toggle" id="themeToggleMobile">☀️</button>
 </nav>
-
 
 
 <!-- ================= INÍCIO ================= -->
@@ -198,6 +200,7 @@
   </div>
 </div>
         </div>
+
 
         <div class="carrossel reveal">
             <div class="carrossel-track">
