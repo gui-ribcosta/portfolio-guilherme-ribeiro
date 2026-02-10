@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guilherme Ribeiro</title>
 
-    <link rel="stylesheet" href="style.css">
-
-    <script src="script.js"></script>
-
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="pages.css">
+    
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
+
 <body>
 
   <div class="stars"></div>
@@ -57,14 +58,25 @@
 </div>
 </header>
 
-<nav class="mobile-nav">
-  <a href="#inicio">Início</a>
-  <a href="#sobre">Sobre</a>
-  <a href="#projetos">Projetos</a>
-  <a href="#certificados">Certificados</a>
-  <a href="#contato">Contato</a>
-  <button class="lang-toggle" id="langToggleMobile">🌐</button>
-  <button class="theme-toggle" id="themeToggleMobile">☀️</button>
+
+<!-- Overlay para fundo escurecido -->
+<div class="overlay" id="overlay"></div>
+
+<!-- ================= MENU MOBILE ================= -->
+<nav class="mobile-nav" id="mobileNav">
+
+    <!-- Botão de fechar -->
+<button class="close-mobile-nav" id="closeMobileNav">
+  <i class='bx bx-x'></i>
+</button>
+
+
+  <a href="#inicio">INÍCIO</a>
+  <a href="#sobre">SOBRE</a>
+  <a href="#projetos">PROJETOS</a>
+  <a href="#certificados">CERTIFICADOS</a>
+  <a href="#contato">CONTATO</a>
+
 </nav>
 
 
@@ -96,7 +108,7 @@
   </div>
 
   <div class="inicio-img reveal">
-    <img src="images/exemplo_home.png" alt="Foto Principal">
+    <img src="images/exemplo_home.png" alt="Foto Principal" loading="lazy">
   </div>
 
 </section>
@@ -118,7 +130,7 @@
     <div id="sobre" class="sobre-container">
 
         <div class="sobre-img reveal">
-            <img src="images/exemplo_sobre.png" alt="Foto Sobre Mim">
+            <img src="images/exemplo_sobre.png" alt="Foto Sobre Mim" loading="lazy">
         </div>
 
         <div class="sobre-text reveal">
@@ -168,161 +180,278 @@
     </div>
 </section>
 
-<div class="section-divider reveal"></div>
 
 
 <!-- ================= PROJETOS ================= -->
 
 <section id="projetos" class="projetos reveal">
-    <div class="container">
-        <div class="projetos-text reveal">
-            <p class="projetos-text-grande text-gradient">
-                TUDO COMEÇOU ERRADO
-            </p>
+  <div class="container">
 
-            <p class="projetos-text-pequeno">
-                Nada fazia sentido no começo. Código quebrava. Ideias falhavam.
-            </p>
+    <!-- ================= TEXTO (ESQUERDA) ================= -->
+    <div class="projetos-text reveal">
 
-            <p class="projetos-text-impact text-gradient">
-                MAS AÍ OS PROJETOS COMEÇARAM A FALAR POR MIM!
-            </p>
-            <div class="carrossel-ui">
-  <div class="carrossel-arrows">
-    <button class="carrossel-btn-prev">&#10094;</button>
-    <button class="carousel-btn next">&#10095;</button>
-  </div>
+      <p class="projetos-text-grande text-gradient">
+        TUDO COMEÇOU ERRADO
+      </p>
 
-  <div class="carrossel-indicators">
-    <span class="indicator active"></span>
-    <span class="indicator"></span>
-    <span class="indicator"></span>
-  </div>
-</div>
+      <p class="projetos-text-pequeno">
+        Nada fazia sentido no começo. Código quebrava. Ideias falhavam.
+      </p>
+
+      <p class="projetos-text-impact text-gradient">
+        MAS AÍ OS PROJETOS COMEÇARAM A FALAR POR MIM!
+      </p>
+
+      <!-- ===== UI DESKTOP (setas abaixo do texto) ===== -->
+      <div class="carrossel-ui carrossel-ui-desktop">
+
+        <!-- SETAS -->
+        <div class="carrossel-arrows">
+          <button class="carrossel-btn carrossel-btn-prev desktop">&#10094;</button>
+          <button class="carrossel-btn carrossel-btn-next desktop">&#10095;</button>
         </div>
 
+        <!-- INDICADORES -->
+        <div class="carrossel-indicators">
+          <span class="indicator active"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+        </div>
 
-        <div class="carrossel reveal">
-            <div class="carrossel-track">
-    <!-- PROJETO 1 -->
-    <div class="project-wrapper reveal">
-        <div class="project-card">
+      </div>
+    </div>
+
+    <!-- ================= CARROSSEL (DIREITA) ================= -->
+    <div class="carrossel reveal">
+
+      <!-- TRACK DOS CARDS -->
+      <div class="carrossel-track">
+
+        <!-- ===== PROJETO 1 ===== -->
+        <div class="project-wrapper reveal">
+          <div class="project-card">
+
             <div class="project-media">
-                <img src="images/projetos.png" alt="Projeto 1">
+              <img
+                src="images/projetos.png"
+                alt="Projeto 1"
+                loading="lazy"
+              >
             </div>
-<div class="project-buttons">
-  <a href="#" class="btn-ver-projeto" target="_blank">VER PROJETO</a>
-</div>
 
-        </div>
-    </div>
-
-    <!-- PROJETO 2 -->
-    <div class="project-wrapper reveal">
-        <div class="project-card">
-            <div class="project-media">
-                <img src="images/projetos.png" alt="Projeto 2">
+            <div class="project-buttons">
+              <a href="#" class="btn-ver-projeto" target="_blank">
+                VER PROJETO
+              </a>
             </div>
-<div class="project-buttons">
-  <a href="#" class="btn-ver-projeto" target="_blank">VER PROJETO</a>
-</div>
 
+          </div>
         </div>
-    </div>
 
-    <!-- PROJETO 3 -->
-    <div class="project-wrapper reveal">
-        <div class="project-card">
+        <!-- ===== PROJETO 2 ===== -->
+        <div class="project-wrapper reveal">
+          <div class="project-card">
+
             <div class="project-media">
-                <img src="images/projetos.png" alt="Projeto 3">
+              <img
+                src="images/projetos.png"
+                alt="Projeto 2"
+                loading="lazy"
+              >
+            </div>
 
-<div class="project-buttons">
-  <a href="#" class="btn-ver-projeto" target="_blank">VER PROJETO</a>
-</div>
+            <div class="project-buttons">
+              <a href="#" class="btn-ver-projeto" target="_blank">
+                VER PROJETO
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ===== PROJETO 3 ===== -->
+        <div class="project-wrapper reveal">
+          <div class="project-card">
+
+            <div class="project-media">
+              <img
+                src="images/projetos.png"
+                alt="Projeto 3"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="project-buttons">
+              <a href="#" class="btn-ver-projeto" target="_blank">
+                VER PROJETO
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ===== UI MOBILE (embaixo do carrossel) ===== -->
+      <div class="carrossel-ui carrossel-ui-mobile">
+
+        <!-- SETAS -->
+        <div class="carrossel-arrows">
+          <button class="carrossel-btn carrossel-btn-prev mobile">&#10094;</button>
+<button class="carrossel-btn carrossel-btn-next mobile">&#10095;</button>
 
         </div>
-    </div>
-</div>
 
+        <!-- INDICADORES -->
+        <div class="carrossel-indicators">
+          <span class="indicator active"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
         </div>
+
+      </div>
+
     </div>
+  </div>
 </section>
 
-<div class="section-divider reveal"></div>
 
-
-<!-- ================= CERTIFICAÇÕES ================= -->
+<!-- ================= CERTIFICADOS ================= -->
 <section id="certificados" class="certificados reveal">
   <div class="container">
 
-   <!-- CARD (ESQUERDA) -->
-<div class="cert-wrapper reveal">
+    <!-- ================= CARROSSEL (ESQUERDA) ================= -->
+    <div class="cert-wrapper reveal">
 
-  <h3 class="cert-titulo text-gradient">CERTIFICADOS EM DESTAQUE:</h3>
+      <!-- TÍTULO -->
+      <h3 class="cert-titulo text-gradient">CERTIFICADOS EM DESTAQUE:</h3>
 
-  <div class="cert-carousel">
+      <!-- CARDS -->
+      <div class="cert-card-container carrossel-track" data-carrossel="certificados">
 
+        <!-- CARD 1 -->
+        <div class="cert-card-principal">
+          <img src="images/projetos.png" alt="Certificação 1">
+          <div class="cert-info">
+            <p>Google IT Support<br>AWS Cloud Practitioner<br>Formação Front-End – Alura</p>
+          </div>
+        </div>
 
-    <div class="cert-card-principal">
-      <img src="images/projetos.png" alt="Certificações">
-      <div class="cert-info">
-        <p>
-          Google IT Support<br>
-          AWS Cloud Practitioner<br>
-          Formação Front-End – Alura
-        </p>
+        <!-- CARD 2 -->
+        <div class="cert-card-principal">
+          <img src="images/projetos.png" alt="Certificação 2">
+          <div class="cert-info">
+            <p>Certificação 2<br>Certificação 2<br>Certificação 2</p>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="cert-card-principal">
+          <img src="images/projetos.png" alt="Certificação 3">
+          <div class="cert-info">
+            <p>Certificação 3<br>Certificação 3<br>Certificação 3</p>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="cert-card-principal">
+          <img src="images/projetos.png" alt="Certificação 4">
+          <div class="cert-info">
+            <p>Certificação 4<br>Certificação 4<br>Certificação 4</p>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="cert-card-principal">
+          <img src="images/projetos.png" alt="Certificação 5">
+          <div class="cert-info">
+            <p>Certificação 5<br>Certificação 5<br>Certificação 5</p>
+          </div>
+        </div>
+
       </div>
-    </div>
-  </div>
 
-  <a href="certificados.html" class="btn-ver-todos">
-    VER TODOS 🠖
-  </a>
+      <!-- UI MOBILE -->
+      <div class="cert-ui cert-ui-mobile">
+        <div class="carrossel-arrows">
+          <button class="carrossel-btn-prev mobile">&#10094;</button>
+          <button class="carrossel-btn-next mobile">&#10095;</button>
+        </div>
+        <div class="carrossel-indicators mobile">
+          <span class="indicator active"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+        </div>
+      </div>
 
-</div>
+      <!-- BOTÃO VER TODOS -->
+      <a href="certificados.html" class="btn-ver-todos">VER TODOS 🠖</a>
 
-    <!-- TEXTO (DIREITA) -->
+    </div> <!-- fim cert-wrapper -->
+
+    <!-- ================= TEXTO (DIREITA) ================= -->
     <div class="estudos-text reveal">
-      <h3 class="estudos-text-grande text-gradient">
-        NEM TUDO VEIO SÓ DA PRÁTICA...
-      </h3>
-
-      <div class="title-divider">
-  <span class="line"></span>
-  <span class="dot"></span>
-</div>
-
-      <p class="estudos-text-pequeno">
-        ESTUDAR MUITO TAMBÉM FEZ PARTE DA MINHA TRAJETÓRIA.
+      <h3 class="estudos-text-grande text-gradient">NEM TUDO VEIO SÓ DA PRÁTICA...</h3>
+      <p class="estudos-text-pequeno">ESTUDAR MUITO TAMBÉM FEZ PARTE DA MINHA TRAJETÓRIA.</p>
+      <p class="estudos-text-pequeno-2">
+        Além da prática, busquei certificações reconhecidas para consolidar meu conhecimento técnico.
       </p>
-     <p class="estudos-text-pequeno-2">
-      Além da prática, busquei certificações reconhecidas para consolidar meu conhecimento técnico.
-     </p>
 
-<!-- UI (SETAS + INDICADORES) -->
-<div class="cert-ui">
-
-  <div class="carrossel-arrows">
-    <button class="carrossel-btn-prev">&#10094;</button>
-    <button class="carousel-btn next">&#10095;</button>
-  </div>
-
-  <div class="carrossel-indicators">
-    <span class="indicator active"></span>
-    <span class="indicator"></span>
-    <span class="indicator"></span>
-  </div>
-
-</div>
-
-    </div>
+      <!-- UI DESKTOP -->
+      <div class="carrossel-ui carrossel-ui-desktop">
+        <div class="carrossel-arrows">
+          <button class="carrossel-btn-prev">&#10094;</button>
+          <button class="carrossel-btn-next">&#10095;</button>
+        </div>
+        <div class="carrossel-indicators">
+          <span class="indicator active"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+          <span class="indicator"></span>
+        </div>
       </div>
-    </div>
 
-  </div>
+    </div> <!-- fim estudos-text -->
+
+  </div> <!-- fim container -->
 </section>
 
-<div class="section-divider reveal"></div>
+
+
+<!-- Linha de linguagens -->
+
+
+<div class="cert-tech-slider">
+  <div class="cert-tech-track">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+    <!-- repetir para loop contínuo -->
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+        <!-- repetir para loop contínuo -->
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+        <!-- repetir para loop contínuo -->
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+    
+  </div>
+</div>
 
 
 <!-- ================= CONTATO ================= -->
@@ -383,10 +512,20 @@
   </div>
 </footer>
 
-<script src="https://unpkg.com/lucide@latest"></script>
+<!-- Lucide primeiro -->
+<script src="https://unpkg.com/lucide@latest" defer></script>
+
+<!-- Seu JS depois -->
+<script src="script.js" defer></script>
+
+<!-- Só depois disso você chama -->
 <script>
-  lucide.createIcons();
+  window.addEventListener("DOMContentLoaded", () => {
+    lucide.createIcons();
+  });
 </script>
+
+
 
 </body>
 </html>

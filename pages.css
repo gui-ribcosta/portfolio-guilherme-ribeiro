@@ -1,0 +1,546 @@
+/* ================= SOBRE DETALHADO ================= */
+
+.sobre-body {
+  background: #111;
+  color: var(--text, #fff);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  padding-top: 90px; /* Espaço para header fixo */
+}
+
+.sobre-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 6%;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* ================= BOTÕES DE AÇÃO ================= */
+
+.action-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+}
+
+/* Botão base */
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+
+  transition: all 0.35s cubic-bezier(.4,0,.2,1);
+  overflow: hidden;
+  min-width: 180px;
+}
+
+/* Ícone */
+.action-btn i {
+  font-size: 20px;
+  color: #c958e9;
+  transition: transform 0.35s ease;
+}
+
+/* Texto */
+.action-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  font-weight: 900
+  ;
+}
+
+.action-text strong {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.action-text span {
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+/* Hover */
+.action-btn:hover {
+  background: linear-gradient(135deg, #9a12d0, #c958e9);
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(154,18,208,0.5);
+}
+
+.action-btn:hover i {
+  transform: translateX(-4px) scale(1.1);
+  color: #ffffff;
+}
+
+/* Botão Voltar específico */
+.back-btn {
+  margin-bottom: 30px;
+}
+
+
+/* ================= SOBRE INTRO ================= */
+.sobre-intro {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  align-items: center;
+  gap: 60px;
+  padding: 60px 8%;
+  background: linear-gradient(135deg, rgba(112,35,135,0.15), rgba(0,0,0,0.9));
+  border-radius: 18px;
+}
+
+.sobre-intro .sobre-img {
+  display: flex;
+  justify-content: center;
+}
+
+.sobre-intro .sobre-img img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 18px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+.sobre-intro .sobre-img img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+}
+
+.sobre-intro .sobre-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sobre-intro .sobre-text h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.sobre-intro .sobre-text h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.sobre-intro .sobre-text p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+  .sobre-intro {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+    padding: 40px 6%;
+  }
+
+  .sobre-intro .sobre-text h1 {
+    font-size: 2.4rem;
+  }
+
+  .sobre-intro .sobre-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .sobre-intro .sobre-img img {
+    max-width: 300px;
+  }
+}
+
+/* ================= FORMAÇÕES ACADÊMICAS ================= */
+.timeline-section {
+  position: relative;
+  padding: 60px 8%;
+  border-radius: 18px;
+  margin: 40px 0;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(112,35,135,0.15), rgba(0,0,0,0.9));
+}
+
+.timeline-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.timeline-subtitle {
+  font-size: 1rem;
+  color: var(--text, #fff);
+  margin-bottom: 50px;
+  font-weight: 800;
+}
+
+.timeline-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 32px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #9a12d0, #c958e9);
+  border-radius: 2px;
+}
+
+.timeline-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  position: relative;
+}
+
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg,#9a12d0,#c958e9);
+  border-radius: 50%;
+  position: relative;
+  top: 4px;
+  z-index: 2;
+}
+
+.timeline-content {
+  background: var(--bg);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  flex: 1;
+  text-align: left;
+}
+
+.timeline-period {
+  font-weight: 700;
+  color: #9a12d0;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.timeline-content h4 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.timeline-content p {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Responsividade */
+@media(max-width:768px){
+  .timeline-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .timeline-line {
+    left: 16px;
+  }
+  .timeline-dot {
+    top: 0;
+  }
+}
+
+
+/* ================= STACKS TECNOLÓGICAS ================= */
+.tech-stack {
+  padding: 60px 8%;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(112,35,135,0.15), rgba(0,0,0,0.9));
+  border-radius: 18px;
+  margin: 40px 0;
+}
+
+.stack-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #9a12d0, #c958e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stack-subtitle {
+  font-size: 1rem;
+  color: var(--text, #fff);
+  margin-bottom: 50px;
+  font-weight: 800;
+}
+
+/* Categoria com barra lateral */
+.stack-category {
+  display: flex;
+  align-items: center;
+  margin: 40px 0 100px;
+  position: relative;
+}
+
+.stack-category span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  padding-left: 20px;
+}
+
+.stack-category span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, #9a12d0, #c958e9);
+  border-radius: 4px;
+}
+
+/* GRID DE CARDS */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+/* CARD DE STACK */
+.stack-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  
+}
+
+.stack-item i {
+  font-size: 48px;
+  color: #fff;
+}
+
+.stack-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.stack-item img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.stack-item h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.stack-item p {
+  font-size: 0.85rem;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .sobre-intro {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .sobre-intro .sobre-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .sobre-intro .sobre-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .timeline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stack-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .stack-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ================= PÁGINA CURRÍCULO ================= */
+
+.curriculo-body {
+  background: radial-gradient(circle at top, #111 0%, #050505 60%);
+  min-height: 100vh;
+  color: var(--text);
+}
+
+/* ================= HEADER CURRÍCULO ================= */
+/* ================= HEADER ================= */
+.curriculo-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* esquerda | centro flexível | direita */
+  align-items: center;
+
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+
+  padding: 0 60px; /* MAIS ESPAÇO DOS CANTOS */
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+/* ================= BOTÕES ================= */
+.back-link,
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 18px;
+  border-radius: 12px;
+
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+
+  transition: all 0.35s ease;
+  white-space: nowrap;
+  min-width: max-content;
+}
+
+/* Botão voltar */
+.back-link {
+  justify-self: start;
+  color: #fff;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  margin-left: 10px; /* afasta ainda mais do canto */
+}
+
+.back-link:hover {
+  background: linear-gradient(135deg, #9a12d0, #c958e9);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(154,18,208,0.35);
+  color: #fff;
+}
+
+/* Botão download */
+.btn-download {
+  justify-self: end;
+  color: #fff;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  margin-right: 10px; /* afasta ainda mais do canto */
+}
+
+/* Ícone de download */
+.btn-download::before {
+  content: "⬇"; /* seta de download */
+  font-size: 1rem;
+}
+
+.btn-download:hover {
+  background: linear-gradient(135deg, #9a12d0, #c958e9);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(154,18,208,0.35);
+  color: #fff;
+}
+
+/* ================= TÍTULO CENTRAL ================= */
+.curriculo-title {
+  justify-self: center;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #e01ceb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+  .curriculo-header {
+    padding: 0 24px;
+  }
+
+  .back-link,
+  .btn-download {
+    font-size: 0.75rem;
+    padding: 4px 12px;
+  }
+
+  .curriculo-title {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+
+/* CONTEÚDO */
+.curriculo-wrapper {
+  padding: 120px 6% 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.curriculo-card {
+  width: 100%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.45);
+}
+
+.curriculo-card iframe {
+  width: 100%;
+  height: 85vh;
+  border: none;
+}
+
