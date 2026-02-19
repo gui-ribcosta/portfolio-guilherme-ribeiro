@@ -382,7 +382,7 @@
 
 .social-icons a:hover {
   background: var(--accent);
-  color: #000;
+  color: #ffffff;
   transform: scale(1.1);
 }
 

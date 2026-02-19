@@ -190,15 +190,18 @@ h1, h2, h3, .text-gradient { font-family: 'Montserrat', sans-serif; }
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: 1000;
+  
 }
 
 .nav a {
-  color: var(--text);
+  color: var(--muted);
   text-decoration: none;
   margin: 0 18px;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   position: relative;
   transition: color 0.3s;
+  letter-spacing: 2px;
 }
 
 .nav a::after {
@@ -243,7 +246,7 @@ h1, h2, h3, .text-gradient { font-family: 'Montserrat', sans-serif; }
 .lang-toggle:hover, .theme-toggle:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(168,85,247,0.6);
-  color: #8a3aa1;
+  color: #ffffff;
 }
 
 .lang-toggle i, .theme-toggle i {
@@ -254,7 +257,7 @@ h1, h2, h3, .text-gradient { font-family: 'Montserrat', sans-serif; }
 
 .lang-toggle:hover i,
 .theme-toggle:hover i {
-  color: #8a3aa1;
+  color: #ffffff;
 }
 
 /* Tooltip */
@@ -497,43 +500,4 @@ h1, h2, h3, .text-gradient { font-family: 'Montserrat', sans-serif; }
 #contato .contato {
   padding-top: 0;
   padding-bottom: 0;
-}
-/* MENU MOBILE */
-.mobile-nav {
-  position: fixed;
-  top: 0;
-  right: -250px; /* inicia fora da tela */
-  width: 250px;
-  height: 100vh;
-  background: #0e0e0e;
-  display: flex;
-  flex-direction: column;
-  padding: 60px 20px;
-  gap: 16px;
-  box-shadow: -4px 0 12px rgba(0,0,0,0.5);
-  transition: right 0.3s ease;
-  z-index: 1102;
-  overflow: visible; /* IMPORTANTE para que o botão X não seja cortado */
-}
-
-/* Botão fechar menu mobile */
-.close-mobile-nav {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: transparent;
-  border: none;
-  font-size: 2rem;
-  color: #fff;
-  cursor: pointer;
-  z-index: 1103; /* acima de tudo */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Se precisar, aumente o tamanho do botão X */
-.close-mobile-nav::after {
-  content: "";
-  display: block;
 }
