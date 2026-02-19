@@ -2,7 +2,7 @@
 
 🚀 Portfólio desenvolvido para apresentar minha evolução como Desenvolvedor Front-End em formação, reunindo projetos, aprendizados práticos e melhorias contínuas conforme avanço nos estudos.
 
-🔗 **Deploy:** [COLOQUE_AQUI_O_LINK_DO_DEPLOY](https://gui-ribeiro.vercel.app/)
+🔗 **Deploy:** [CLIQUE PARA ABRIR NO VERCEL:](https://gui-ribeiro.vercel.app/)
 
 ---
 
