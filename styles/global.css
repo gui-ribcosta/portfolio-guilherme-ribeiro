@@ -1,0 +1,135 @@
+/* ================================================= */
+/* ===================== RESET ===================== */
+/* ================================================= */
+
+/*
+  Remove margens e paddings padrão do navegador
+  e ativa o box model correto.
+  Agora width e height incluem padding e border.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+  Ativa scroll suave ao clicar em âncoras (#id)
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* ================================================= */
+/* ==================== VARIÁVEIS ================== */
+/* ================================================= */
+
+/*
+  Variáveis globais reutilizáveis no projeto inteiro.
+  Facilita manutenção e padronização visual.
+*/
+:root {
+
+  /* ===== CORES PRINCIPAIS ===== */
+  --bg: #030323;          /* Fundo principal */
+  --bg-soft: #d7d2d200;     /* Fundo secundário */
+  --text: #eaeaea;        /* Cor principal do texto */
+  --muted: #9a9a9a;       /* Texto secundário */
+  --accent: #9a12d0;      /* Cor de destaque */
+  --border: #222;         /* Cor padrão de borda */
+
+  /* ===== TIPOGRAFIA ===== */
+  --body-font: "Inter", system-ui, sans-serif;
+  --title-font: "Montserrat", sans-serif;
+
+  /* ===== ESCALA DE TAMANHOS DE FONTE ===== */
+  --biggest-font-size: 4rem;
+  --bigger-font-size: 3rem;
+  --second-big-font-size: 2.5rem;
+  --h1-font-size: 2rem;
+  --h2-font-size: 1.6rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1.15rem;
+  --small-font-size: 1rem;
+  --smaller-font-size: 0.8rem;
+}
+
+
+/* ================================================= */
+/* ===================== BASE ====================== */
+/* ================================================= */
+
+/*
+  Estilo base do site:
+  - Define tipografia padrão
+  - Define fundo com múltiplos radial-gradients
+  - Define cor de texto padrão
+  - Define espaçamento entre linhas
+*/
+body {
+  font-family: var(--body-font);
+  background:
+    radial-gradient(1200px 600px at 70% 10%, rgba(112,35,135,0.14), transparent 60%),
+    radial-gradient(900px 500px at 20% 50%, rgba(255,255,255,0.035), transparent 70%),
+    radial-gradient(600px 300px at 50% 90%, rgba(112,35,135,0.08), transparent 70%),
+    #0b0b0b;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+/*
+  Remove comportamento estranho de imagens
+  - Impede overflow horizontal
+  - Remove espaço extra abaixo da imagem
+*/
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* ================================================= */
+/* =================== TIPOGRAFIA ================== */
+/* ================================================= */
+
+/*
+  Define fonte especial para títulos
+*/
+h1,
+h2,
+h3 {
+  font-family: var(--title-font);
+}
+
+/*
+  Classe utilitária de texto com gradiente
+  Pode ser usada em qualquer elemento
+*/
+.text-gradient {
+  background: linear-gradient(
+    180deg,
+    #ed78ed 0%,
+    #9a1fb6 50%,
+    #8e02eb 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* ================================================= */
+/* =================== ANIMAÇÕES =================== */
+/* ================================================= */
+
+/*
+  Animação genérica de brilho (usada para estrelas ou efeitos sutis)
+*/
+@keyframes twinkle {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}

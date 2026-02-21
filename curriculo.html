@@ -1,34 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
+  <!-- CONFIGURAÇÕES -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Currículo | Guilherme Ribeiro</title>
 
-  <link rel="stylesheet" href="pages.css">
-  <link rel="stylesheet" href="global.css">
+  <!-- ESTILOS -->
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/pages.css">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- BOXICONS -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
+
 <body class="curriculo-body">
 
-  <!-- TOPO -->
+  <!-- ================= HEADER FIXO ================= -->
   <header class="curriculo-header">
-    <a href="index.html" class="back-link">← VOLTAR AO SITE</a>
 
-    <span class="curriculo-title">Preview do Currículo</span>
-
-    <a href="files/Currículo_Guilherme_Tecnologia.pdf" download class="btn-download">
-       BAIXAR PDF
+    <!-- Botão Voltar -->
+    <a href="index.html" class="back-link"><i class="fa-solid fa-angle-left"></i>
+      Voltar ao Site
     </a>
+
+    <!-- Título -->
+    <div class="header-center">
+      <p class="curriculo-subtitle">
+        Versão resumida para visualização rápida.
+      </p>
+    </div>
+
+    <!-- Botão Download -->
+    <a 
+      href="assets/files/Currículo_Guilherme_Tecnologia.pdf" 
+      download 
+      class="btn-download"> <i class="fa-solid fa-download"></i>
+      BAIXAR PDF
+    </a>
+
   </header>
 
-  <!-- CONTEÚDO -->
+  <!-- ================= CONTEÚDO ================= -->
   <main class="curriculo-wrapper">
-    <div class="curriculo-card">
-      <iframe 
-        src="files/Currículo_Guilherme_Tecnologia.pdf"
-        title="Currículo Guilherme Ribeiro">
-      </iframe>
+
+    <div class="curriculo-container">
+
+      <!-- Página 1 -->
+      <div class="curriculo-card">
+        <img 
+          src="assets/images/curriculo-1.png"
+          alt="Currículo Guilherme Ribeiro - Página 1"
+          class="curriculo-img"
+        />
+      </div>
+
+      <!-- Página 2 -->
+      <div class="curriculo-card">
+        <img 
+          src="assets/images/curriculo-2.png"
+          alt="Currículo Guilherme Ribeiro - Página 2"
+          class="curriculo-img"
+        />
+      </div>
+
     </div>
+
   </main>
 
 </body>

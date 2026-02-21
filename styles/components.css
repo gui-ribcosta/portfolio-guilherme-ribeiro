@@ -1,0 +1,352 @@
+/* ================================================= */
+/* ================= BOTÕES BASE =================== */
+/* ================================================= */
+
+/*
+  Classe base de botão reutilizável.
+  Define estrutura, espaçamento, tipografia e comportamento padrão.
+*/
+.btn {
+  padding: 12px 28px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+/*
+  Variação com fundo gradiente.
+*/
+.btn-gradient {
+  background: linear-gradient(90deg, #9a12d0, #c958e9);
+  color: #fff;
+}
+
+.btn-gradient:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.45);
+}
+
+/*
+  Variação neutra com fundo translúcido.
+*/
+.btn-soft {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-soft:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+/* ================================================= */
+/* ================= SOCIAL FIXO =================== */
+/* ================================================= */
+
+/*
+  Barra social fixa vertical na lateral esquerda.
+*/
+.social-fixed {
+  position: fixed;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  z-index: 10;
+}
+
+/*
+  Links internos da barra social.
+*/
+.social-fixed a {
+  color: #cfcfcf;
+  font-size: 1.3rem;
+  transition: 0.3s;
+}
+
+.social-fixed a:hover {
+  color: var(--accent);
+  transform: translateX(6px);
+}
+
+/*
+  Wrapper que permite tooltip via pseudo-elementos.
+*/
+.social-link {
+  position: relative;
+}
+
+/*
+  Tooltip (texto exibido via data-tooltip).
+*/
+.social-link::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-10px);
+  background: #111;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/*
+  Pequena seta do tooltip.
+*/
+.social-link::before {
+  content: "";
+  position: absolute;
+  left: 52px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent #111 transparent transparent;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+/*
+  Exibe tooltip ao passar o mouse.
+*/
+.social-link:hover::after,
+.social-link:hover::before {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ================================================= */
+/* ================= CARROSSEL ===================== */
+/* ================================================= */
+
+/*
+  Botões circulares de navegação.
+*/
+.carrossel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: var(--text);
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  transition: 0.3s;
+}
+
+.carrossel-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/*
+  Indicadores do carrossel.
+*/
+.carrossel-indicators {
+  display: flex;
+  gap: 10px;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.indicator.active {
+  width: 34px;
+  height: 6px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #a855f7, #702387);
+}
+
+
+/* ================================================= */
+/* ================= EFEITOS VISUAIS =============== */
+/* ================================================= */
+
+/*
+  Glow radial reutilizável para fundos decorativos.
+*/
+.glow {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, #7b2cbf 0%, transparent 70%);
+  filter: blur(90px);
+  z-index: 1;
+}
+
+/* ================================================= */
+/* ================= SLIDER INFINITO =============== */
+/* ================================================= */
+
+/*
+  Track animado horizontal infinito.
+*/
+.slider-track {
+  display: flex;
+  gap: 26px;
+  width: max-content;
+  animation: slideInfinite 20s linear infinite;
+}
+
+@keyframes slideInfinite {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ================================================= */
+/* ================= BACKGROUND STARS ============== */
+/* ================================================= */
+
+/*
+  Container fixo das estrelas.
+*/
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/*
+  Estrelas criadas via box-shadow.
+*/
+.stars::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 
+    50px 100px white,
+    150px 200px white,
+    250px 50px white,
+    350px 300px white,
+    450px 150px white,
+    600px 250px white,
+    700px 400px white,
+    850px 180px white,
+    950px 90px white,
+    1050px 350px white,
+    1100px 400px white,
+    200px 600px white,
+    400px 650px white,
+    800px 700px white,
+    1000px 750px white,
+    1150px 180px white,
+    650px 550px white,
+    1300px 300px white,
+    1400px 150px white,
+    1470px 650px white,
+    1360px 450px white,
+    500px 450px white;
+  animation: twinkle 2s infinite alternate;
+}
+
+/*
+  Animação de brilho.
+*/
+@keyframes twinkle {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+
+/* ================================================= */
+/* ================= SLIDER TECNOLOGIAS ============ */
+/* ================================================= */
+
+.cert-tech-slider {
+  overflow: hidden;
+  width: 100%;
+  background: rgba(14, 14, 14, 0.6);
+}
+
+.cert-tech-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 26px;
+  width: max-content;
+  animation: certSlide 20s linear infinite;
+}
+
+.cert-tech-track img {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+@keyframes certSlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ================================================= */
+/* ================= TITLE DIVIDER ================= */
+/* ================================================= */
+
+.title-divider {
+  position: relative;
+  width: 140px;
+  height: 16px;
+  margin: 0 auto;
+}
+
+.title-divider.left {
+  margin: 0;
+  margin-top: 24px;
+}
+
+.title-divider .line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #371042, #877e8b);
+  transform: translateY(-50%);
+}
+
+.section-title {
+  position: relative;
+  padding-left: 80px; /* espaço para a barra */
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px; /* comprimento da barra */
+  height: 4px;  /* espessura */
+  background: linear-gradient(90deg, #9a12d0, #c958e9);
+  border-radius: 4px;
+}

@@ -1,0 +1,1313 @@
+/* =========================================
+   SECTION BASE
+   Configuração padrão aplicada a TODAS as sections
+========================================= */
+
+section {
+  section {
+  padding-top: 20px;      /* Espaçamento interno padrão */
+  padding-bottom: 2px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+  position: relative;   /* Permite elementos posicionados dentro */
+}
+
+/* Evita que o header fixo cubra a section ao usar âncora */
+section[id] {
+  scroll-margin-top: 80px; /* Ajuste conforme altura do header */
+}
+
+/* =========================================
+   INÍCIO (HERO PRINCIPAL)
+========================================= */
+
+.inicio {
+  min-height: 90vh;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 5rem;
+}
+
+.inicio_left, .inicio_center, .inicio_right {
+  flex: 1 1 300px; /* cresce e encolhe, mínimo 300px */
+  text-align: center;
+}
+
+/* ================= CONTAINER ================= */
+
+.inicio_container {
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  margin: auto;
+  padding: 0 15px;
+}
+
+/* ================= ESQUERDA ================= */
+
+.inicio_left {
+  text-align: left;
+  padding-left: 5rem;
+}
+
+.inicio_greeting {
+  font-size: var(--h2-font-size);
+  font-family: var(--title-font);
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.inicio_name {
+  font-size: clamp(2rem, 5vw, 4rem); /* cresce ou diminui de acordo com a tela */
+  font-family: var(--title-font);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.1;
+}
+
+/* ================= CENTRO ================= */
+
+.inicio_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inicio_img {
+  width: 100%;
+  max-width: 500px;
+  z-index: 2;
+}
+
+/* ================= DIREITA ================= */
+
+.inicio_right {
+  text-align: left;
+  padding-left: 2rem;
+}
+
+.inicio_split {
+  color: var(--accent);
+  font-size: var(--h2-font-size);
+  font-family: var(--title-font);
+  margin-bottom: 0.3rem;
+  letter-spacing: 2px;
+}
+
+.titulo_stack {
+  position: relative;
+  display: inline-block;
+}
+
+.stack_top {
+  font-size: var(--biggest-font-size);
+  font-family: var(--title-font);
+  font-weight: 800;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    #c77dff
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.stack_bottom {
+  font-size: var(--second-big-font-size);
+  font-family: var(--title-font);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1;
+  position: absolute;
+  top: 3rem;
+  left: 0;
+}
+
+/* ================= SOCIAIS FIXOS ================= */
+
+.inicio_social {
+  position: fixed;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  z-index: 10;
+}
+
+.inicio_social a {
+  color: var(--text);
+  font-size: var(--h3-font-size);
+  transition: 0.3s;
+}
+
+.inicio_social a:hover {
+  color: var(--accent);
+  transform: translateX(6px);
+}
+
+.inicio_social_link {
+  position: relative;
+}
+
+/* Tooltip */
+
+.inicio_social_link::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-10px);
+  background: var(--bg-soft);
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: var(--smaller-font-size);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.inicio_social_link:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ================= RESPONSIVO ================= */
+
+/* ======== TABLET ======== */
+@media (max-width: 1024px) {
+  .inicio_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* esquerda e centro/direita juntos */
+    gap: 1.5px;
+    padding: 2 8px;
+    justify-items: center; /* centraliza conteúdos */
+    min-height: auto;
+  }
+
+  .inicio_left,
+  .inicio_right {
+    text-align: center; /* centraliza títulos */
+    padding: 0;
+  }
+
+  .inicio_img {
+    max-width: 400px;
+  }
+
+  .stack_bottom {
+    position: static;
+    margin-top: 0.5rem;
+  }
+
+  /* Mantém ícones fixos na lateral esquerda */
+  .inicio_social {
+    position: fixed;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+  }
+
+  /* Textos menores */
+  .inicio_greeting {
+    font-size: 1.5rem; /* menor que desktop */
+  }
+
+  .inicio_name {
+    font-size: 3rem; /* título principal menor */
+  }
+
+  .stack_top {
+    font-size: 2.5rem;
+  }
+
+  .stack_bottom {
+    font-size: 2rem;
+  }
+
+  .inicio_split {
+    font-size: 1.5rem;
+  }
+}
+
+/* ======== CELULAR ======== */
+@media (max-width: 768px) {
+  .inicio_container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /* reduz gap vertical */
+    padding: 2rem 8%; /* diminui padding lateral e vertical */
+    min-height: auto; /* deixa o container se adaptar ao conteúdo */
+  }
+
+  .inicio_left,
+  .inicio_right {
+    text-align: center;
+    padding: 0;
+    margin: 0.5rem 0;
+  }
+
+  .inicio_img {
+    max-width: 300px;
+    margin: 1.5rem 0;
+  }
+
+  .stack_bottom {
+    position: static;
+    margin-top: 0.3rem;
+  }
+
+  
+
+  /* Redes sociais continuam na lateral esquerda */
+  .inicio_social {
+    position: fixed;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .inicio_social_link::after {
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-10px);
+  }
+}
+
+
+/* =========================================
+   SOBRE
+========================================= */
+
+#sobre {
+  scroll-margin-top: 125px; /* Compensa header fixo */
+}
+
+/* ================= CONTAINER ================= */
+
+.sobre-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+
+  min-height: 75vh;
+  padding: 10rem 10%;
+}
+
+/* ================= IMAGEM ================= */
+
+.sobre-img {
+  overflow: hidden;
+  border-radius: 1.2rem;
+  padding-left: 5rem;
+}
+
+.sobre-img img {
+  width: 100%;
+  max-width: 410px;
+  height: auto;
+  border-radius: 1.2rem;
+  transition: transform 0.4s ease;
+}
+
+.sobre-img:hover img {
+  transform: scale(1.05);
+}
+
+/* ================= TEXTO ================= */
+
+.sobre-text-impactante {
+  font-size: var(--second-big-font-size);
+  font-family: var(--title-font);
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+}
+
+.resumo-text {
+  font-size: var(--small-font-size);
+  font-family: var(--body-font);
+  color: var(--text);
+  max-width: 720px;
+  margin-top: 1.5rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* ================= DESTAQUE ================= */
+
+.destaque {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ================= BOTÕES / SOCIAL ================= */
+
+.social-area {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.btn-ver-mais {
+  align-self: flex-end;
+  font-family: var(--title-font);
+  font-weight: 700;
+  font-size: var(--smaller-font-size);
+  color: var(--muted);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-ver-mais:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   SOBRE - RESPONSIVO
+========================================= */
+
+/* ================= SCROLL ================= */
+#sobre {
+  scroll-margin-top: 125px; /* default para telas grandes */
+}
+
+/* ================= CONTAINER ================= */
+.sobre-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+
+  min-height: 75vh;
+  padding: 6rem 10%; /* padding vertical mais flexível */
+  margin-top: 4rem; /* ajusta distância da section anterior */
+}
+
+/* ================= IMAGEM ================= */
+.sobre-img {
+  overflow: hidden;
+  border-radius: 1.2rem;
+  padding-left: 2rem;
+}
+
+.sobre-img img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  border-radius: 1.2rem;
+  transition: transform 0.4s ease;
+}
+
+.sobre-img:hover img {
+  transform: scale(1.05);
+}
+
+/* ================= TEXTO ================= */
+.sobre-text-impactante {
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem); /* responsivo */
+  font-family: var(--title-font);
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+}
+
+.resumo-text {
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem); /* texto proporcional */
+  font-family: var(--body-font);
+  color: var(--text);
+  max-width: 720px;
+  margin-top: 1.5rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* ================= DESTAQUE ================= */
+.destaque {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ================= BOTÕES / SOCIAL ================= */
+.social-area {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.btn-ver-mais {
+  align-self: flex-end;
+  font-family: var(--title-font);
+  font-weight: 700;
+  font-size: var(--smaller-font-size);
+  color: var(--muted);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-ver-mais:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ================= TABLET (1024px) ================= */
+@media (max-width: 1024px) {
+  #sobre {
+    scroll-margin-top: 100px; /* header menor */
+  }
+
+  .sobre-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+    padding: 0 8%;
+    margin-top: 3rem;
+  }
+
+  .sobre-img {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    padding-left: 0;
+  }
+
+  .sobre-text {
+    order: 2;
+  }
+
+  .sobre-text-impactante {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+  }
+
+  .resumo-text {
+    max-width: 600px;
+    margin: 1.5rem auto 0;
+  }
+
+  .btn-ver-mais {
+    align-self: center;
+  }
+}
+
+/* ================= MOBILE (480px) ================= */
+@media (max-width: 480px) {
+  #sobre {
+    scroll-margin-top: 80px; /* header ainda menor */
+  }
+
+  .sobre-container {
+    padding: 0 6%;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .sobre-text-impactante {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .resumo-text {
+    font-size: clamp(0.8rem, 3.5vw, 1rem);
+  }
+}
+
+/* ================= TELA GRANDE (1600px+) ================= */
+@media (min-width: 1600px) {
+  .sobre-container {
+    margin-top: 5rem; /* espaço maior em monitores grandes */
+  }
+
+  .sobre-text-impactante {
+    font-size: 3rem;
+  }
+
+  .resumo-text {
+    font-size: 1.25rem;
+  }
+}
+
+
+
+/* =========================================
+   SECTION — PROJETOS RESPONSIVO
+========================================= */
+
+/* ================= SCROLL ================= */
+#projetos {
+  scroll-margin-top: 55px; /* default header fixo */
+  background-color: var(--bg);
+  padding: clamp(4rem, 6vw, 8rem) 8%; /* padding vertical flexível */
+}
+
+/* ================= CONTAINER ================= */
+.projetos {
+  width: 100%;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.projetos .container {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  align-items: center;
+  gap: clamp(20px, 2vw, 40px);
+}
+
+/* ================= TEXTO (ESQUERDA) ================= */
+.projetos-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.projetos-text-grande {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 10px;
+}
+
+.projetos-text-impact {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-top: 20px;
+  font-family: var(--title-font);
+}
+
+.projetos-text-pequeno {
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  color: var(--muted);
+  max-width: 920px;
+  margin-top: 30px;
+}
+
+/* ================= CARROSSEL ================= */
+.carrossel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carrossel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+  width: 100%;
+  gap: 1rem;
+}
+
+.project-wrapper {
+  flex: 0 0 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ================= CARD DO PROJETO ================= */
+.project-card {
+  width: 100%;
+  max-width: 780px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(
+    145deg,
+    rgba(28, 28, 45, 0.9),
+    rgba(18, 18, 30, 0.9)
+  );
+  border: 1px solid rgba(154, 18, 208, 0.3);
+  box-shadow:
+    0 0 0 1px rgba(154, 18, 208, 0.2),
+    0 20px 60px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  transition: 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 0 25px rgba(154, 18, 208, 0.4),
+    0 25px 70px rgba(0, 0, 0, 0.7);
+}
+
+/* IMAGEM */
+.project-media {
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.project-media img {
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+/* CONTEÚDO INTERNO DOS CARDS */
+.project-content {
+  padding: 28px 32px 34px;
+}
+
+.project-title {
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.project-description {
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  color: #b8b8d4;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+
+/* BOTÕES */
+.project-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-demo {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-details {
+  padding: 10px 22px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  text-decoration: none;
+  color: var(--text);
+  transition: 0.3s;
+}
+
+.btn-details:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* ================= UI DO CARROSSEL ================= */
+.carrossel-ui-desktop,
+.carrossel-ui-mobile {
+  display: none;
+}
+
+.projetos-text .carrossel-ui {
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.carrossel-arrows {
+  display: flex;
+  gap: 16px;
+}
+
+/* ================= RESPONSIVIDADE ================= */
+
+/* ===== DESKTOP ===== */
+@media (min-width: 1024px) and (max-width: 1599px) {
+  .carrossel-ui-desktop {
+    display: flex;
+  }
+}
+
+/* ===== TABLET ===== */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  #projetos {
+    scroll-margin-top: 100px;
+    padding: 6rem 6%;
+  }
+
+  .projetos .container {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 25px;
+  }
+
+  .projetos-text-impact {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+  }
+
+  .project-card {
+    max-width: 600px;
+  }
+
+  .project-media img {
+    height: 300px;
+  }
+
+  .carrossel-ui-desktop {
+    display: flex;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 767px) {
+
+  #projetos {
+    scroll-margin-top: 80px;
+    padding: 4rem 5%;
+  }
+
+  .projetos .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .projetos-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .projetos-text-impact {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .project-media img {
+    height: 260px;
+  }
+
+  .carrossel-ui-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 18px;
+    gap: 12px;
+  }
+}
+
+/* ===== MONITORES GRANDES (1600px+) ===== */
+@media (min-width: 1600px) {
+  #projetos {
+    padding: 8rem 10%;
+  }
+
+  .projetos-text-impact {
+    font-size: 3rem;
+  }
+
+  .project-card {
+    max-width: 780px;
+  }
+}
+
+
+
+/* =========================================
+   SECTION — CERTIFICADOS
+========================================= */
+
+#certificados {
+  width: 100%;
+  padding: 100px 8%;
+  position: relative;
+  background-color: black;
+  min-height: 700px;
+}
+
+/* =========================================
+   CONTAINER PRINCIPAL
+========================================= */
+
+#certificados .container {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 150px;
+}
+
+/* =========================================
+   LADO ESQUERDO — CARDS
+========================================= */
+
+.cert-wrapper {
+  flex: 0 0 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  overflow: hidden;
+  position: relative;
+}
+
+/* TÍTULO */
+
+.cert-titulo {
+  font-size: var(--h2-font-size);
+  font-family: var(--title-font);
+  text-align: center;
+}
+
+/* =========================================
+   TRACK (CARROSSEL)
+========================================= */
+
+.cert-card-container {
+  display: flex;
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+
+/* =========================================
+   CARD PRINCIPAL
+========================================= */
+
+.cert-card-principal {
+  flex: 0 0 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  padding: 28px;
+  border-radius: 20px;
+
+  background-color: var(--bg-soft);
+  border: 1px solid var(--muted);
+
+  box-sizing: border-box;
+  transition: 0.3s ease;
+}
+
+.cert-card-principal:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+}
+
+/* IMAGEM */
+
+.cert-card-principal img {
+  width: 190px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+
+/* TEXTO DO CARD */
+
+.cert-info {
+  flex: 1;
+}
+
+.cert-info p {
+  font-size: var(--normal-font-size);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+/* =========================================
+   LADO DIREITO — TEXTOS
+========================================= */
+
+.estudos-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.estudos-text-grande {
+  font-size: var(--bigger-font-size);
+  font-weight: 900;
+  line-height: 1.1;
+  font-family: var(--title-font);
+}
+
+.estudos-text-pequeno {
+  font-size: var(--h3-font-size); /* corrigido */
+  font-weight: 700;
+  color: var(--text);
+  padding-top: 1rem;
+}
+
+.estudos-text-pequeno-2 {
+  font-size: var(--normal-font-size);
+  color: var(--muted);
+}
+
+/* =========================================
+   BOTÃO — VER TODOS
+========================================= */
+
+.btn-ver-todos {
+  margin: 16px auto 0;
+  padding: 10px 26px;
+
+  border-radius: 14px;
+  background-color: var(--bg-soft);
+  border: 1px solid var(--border);
+
+  color: var(--muted);
+  text-decoration: none;
+
+  font-weight: 600;
+  font-size: var(--smaller-font-size);
+
+  transition: 0.3s;
+}
+
+.btn-ver-todos:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* =========================================
+   UI DO CARROSSEL
+========================================= */
+
+/* Desktop */
+
+.carrossel-ui-desktop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Mobile escondido */
+
+.cert-ui-mobile {
+  display: none;
+}
+
+
+/* Setas */
+
+.carrossel-arrows {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.carrossel-btn-prev,
+.carrossel-btn-next {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  background-color: var(--bg-soft);
+  border: 1px solid var(--border);
+
+  color: var(--text);
+  font-size: var(--normal-font-size);
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s;
+}
+
+.carrossel-btn-prev:hover,
+.carrossel-btn-next:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+/* ===== INTERMEDIÁRIO — NOTEBOOKS 13.5" ~ 15" ===== */
+@media (max-width: 1366px) and (min-width: 1024px) {
+  #certificados .container {
+    gap: 50px; /* diminui o espaço entre os lados */
+  }
+
+  .cert-wrapper {
+    flex: 0 0 420px; /* diminui a largura dos cards */
+  }
+
+  .estudos-text {
+    flex: 1; /* garante que ocupe o resto do espaço */
+  }
+}
+
+
+/* ===== TABLET E MOBILE ===== */
+
+@media (max-width: 1023px) {
+
+  #certificados .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .estudos-text {
+    order: 1;
+    align-items: center;
+  }
+
+  .cert-wrapper {
+    order: 2;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .cert-card-principal {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+    padding: 22px;
+  }
+
+  .cert-card-principal img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .cert-info p {
+    font-size: var(--small-font-size);
+  }
+
+    .carrossel-ui-mobile {
+    display: flex !important;
+    position: absolute;
+    bottom: 20px; /* ou 50px, ajusta conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 16px;
+    align-items: center;
+    z-index: 20;
+  }
+
+  .carrossel-ui-desktop {
+    display: none;
+  }
+
+}
+
+/* ===== CELULAR PEQUENO ===== */
+
+@media (max-width: 480px) {
+
+  .estudos-text-grande {
+    font-size: var(--h1-font-size);
+  }
+
+  .cert-wrapper {
+    max-width: 320px;
+  }
+
+  .cert-card-principal {
+    padding: 18px;
+  }
+  
+}
+
+/* =========================================
+   SECTION — CONTATO
+========================================= */
+
+#contato {
+  scroll-margin-top: 70px;
+  background-color: var(--bg);
+}
+
+/* Container principal */
+
+.contato {
+  padding: 100px 8%;
+  min-height: 75vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+
+  text-align: center;
+}
+
+/* =========================================
+   TEXTOS
+========================================= */
+
+.contato-historia {
+  font-size: var(--h1-font-size);
+  font-family: var(--title-font);
+  font-weight: 800;
+}
+
+.contato-convite {
+  font-size: var(--normal-font-size);
+  color: var(--muted);
+  max-width: 700px;
+}
+
+/* =========================================
+   CARDS DE CONTATO
+========================================= */
+
+.contato-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  margin-top: 30px;
+}
+
+/* Card individual */
+
+.contato-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 22px;
+
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background-color: var(--bg-soft);
+
+  text-decoration: none;
+  color: var(--text);
+
+  font-size: var(--small-font-size);
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.contato-card i {
+  font-size: var(--h3-font-size);
+  color: var(--accent);
+}
+
+/* Hover */
+
+.contato-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ======= TABLET ======= */
+@media (max-width: 1024px) {
+  .contato {
+    padding: 60px 6%;
+    gap: 16px;
+  }
+
+  .contato-historia {
+    font-size: 2rem; /* menor que antes */
+  }
+
+  .contato-convite {
+    font-size: 0.9rem;
+    max-width: 500px;
+  }
+
+  .contato-cards {
+    flex-wrap: nowrap; /* não empilha os cards */
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .contato-card {
+    flex: 1 1 auto;
+    padding: 10px 18px;
+    font-size: 0.85rem;
+    gap: 8px;
+  }
+
+  .contato-card i {
+    font-size: 1.2rem;
+  }
+}
+
+/* ======= CELULAR ======= */
+@media (max-width: 768px) {
+  .contato {
+    padding: 50px 4%;
+    gap: 12px;
+  }
+
+  .contato-historia {
+    font-size: 1.6rem; /* títulos menores */
+  }
+
+  .contato-convite {
+    font-size: 0.85rem;
+    max-width: 350px;
+  }
+
+  .contato-cards {
+    flex-direction: row; /* ícones um ao lado do outro */
+    flex-wrap: wrap; /* quebra para a próxima linha se necessário */
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .contato-card {
+    width: auto;
+    padding: 10px 12px;
+    font-size: 0.8rem;
+    gap: 6px;
+  }
+
+  .contato-card i {
+    font-size: 1.1rem;
+  }
+}
+
+/* ======= CELULAR PEQUENO ======= */
+@media (max-width: 480px) {
+  .contato-historia {
+    font-size: 1.4rem;
+  }
+
+  .contato-convite {
+    font-size: 0.8rem;
+  }
+
+  .contato-card {
+    padding: 8px 10px;
+    font-size: 0.75rem;
+  }
+
+  .contato-card i {
+    font-size: 1rem;
+  }
+}

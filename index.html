@@ -5,14 +5,18 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Guilherme Ribeiro</title>
 
-      <link rel="stylesheet" href="global.css">
-      <link rel="stylesheet" href="home.css">
-      <link rel="stylesheet" href="pages.css">
-      
+      <link rel="stylesheet" href="styles/global.css">
+      <link rel="stylesheet" href="styles/layout.css">
+      <link rel="stylesheet" href="styles/components.css">
+      <link rel="stylesheet" href="styles/sections.css">
+      <link rel="stylesheet" href="styles/pages.css">
 
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
       <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 
   </head>
 
@@ -47,7 +51,7 @@
     <!-- BOTÃO TRADUÇÃO -->
     <button class="lang-toggle" id="langToggle">
       <i class='bx bx-world'></i>
-      <span class="lang-tooltip">TRANSLATE TO ENGLISH</span>
+      <span class="lang-tooltip">SELETOR DE IDIOMA</span>
     </button>
 
     <!-- BOTÃO TEMA -->
@@ -63,14 +67,12 @@
   <div class="overlay" id="overlay"></div>
 
   <!-- ================= MENU MOBILE ================= -->
-  <nav class="mobile-nav" id="mobileNav">
+  <nav class="mobile-nav" id="mobileNav" >
 
       <!-- Botão de fechar -->
   <button class="close-mobile-nav" id="closeMobileNav">
-    <i class='bx bx-x'></i>
+    <i class="fa-solid fa-xmark"></i>
   </button>
-
-
     <a href="#inicio">INÍCIO</a>
     <a href="#sobre">SOBRE</a>
     <a href="#projetos">PROJETOS</a>
@@ -80,48 +82,70 @@
   </nav>
 
 
-  <!-- ================= INÍCIO ================= -->
+<!-- ================= INÍCIO ================= -->
 
+<section id="inicio" class="inicio">
+  <div class="inicio_container">
 
-  <section id="inicio" class="inicio">
-    
-    <div class="inicio-text reveal">
-      <h2 class="text-gradient">Esse aí sou eu.</h2>
-
-      <p>
-        Dá pra notar que eu precisava <br>
-        dar um jeito na minha vida. <br>
-      </p>
-
-      <h2 class="text-gradient">E EU REALMENTE DEI!</h2>
-
-      <!-- BOTÕES -->
-      <div class="inicio-actions">
-        <a href="curriculo.html" class="btn-curriculo">
-          Ver Currículo
-        </a>
-
-        <a href="https://wa.me/5521980417869" target="_blank" class="btn-contato">
-          WhatsApp
-        </a>
-      </div>
+    <!-- ESQUERDA -->
+    <div class="inicio_left">
+      <h3 class="inicio_greeting">Olá, me chamo</h3>
+      <h1 class="inicio_name">
+        <span>Guilherme <br>Ribeiro</span>
+      </h1>
     </div>
 
-    <div class="inicio-img reveal">
-      <img src="images/exemplo_home.png" alt="Foto Principal" loading="lazy">
+    <!-- CENTRO (IMAGEM) -->
+    <div class="inicio_center">
+      <div class="glow"></div>
+      <img src="assets/images/foto_home-removebg-preview.png" 
+           alt="Guilherme Ribeiro" 
+           class="inicio_img">
     </div>
 
-  </section>
+    <!-- DIREITA -->
+<div class="inicio_right">
+  <h3 class="inicio_split">Creative</h3>
 
+  <div class="titulo_stack">
+    <h1 class="stack_top">Developer</h1>
+    <h1 class="stack_bottom">& Designer</h1>
+  </div>
+</div>
 
-  <!-- ================= FRASE IMPACTANTE ================= -->
+    <!-- REDES SOCIAIS -->
+    <div class="inicio_social">
 
+  <a href="https://instagram.com/gui_ribcosta" target="_blank"
+     class="inicio_social_link" data-tooltip="INSTAGRAM">
+     <i data-lucide="instagram"></i>
+  </a>
 
-  <section id="manifesto" class="manifesto reveal">
-      <p class="manifesto-text text-gradient">
-          Eu nunca fui só lógico ou só criativo...
-      </p>
-  </section>
+  <a href="https://linkedin.com/in/guiribcosta" target="_blank"
+     class="inicio_social_link" data-tooltip="LINKEDIN">
+     <i data-lucide="linkedin"></i>
+  </a>
+
+  <a href="https://github.com/gui-ribcosta" target="_blank"
+     class="inicio_social_link" data-tooltip="GITHUB">
+     <i data-lucide="github"></i>
+  </a>
+
+  <a href="mailto:grcm171914@gmail.com"
+     class="inicio_social_link" data-tooltip="E-MAIL">
+     <i data-lucide="mail"></i>
+  </a>
+
+  <a href="curriculo.html"
+     class="inicio_social_link" data-tooltip="CURRÍCULO">
+     <i data-lucide="file-text"></i>
+  </a>
+</div>
+
+  </div>
+
+  
+</section>
 
 
   <!-- ================= SOBRE MIM ================= -->
@@ -130,16 +154,16 @@
       <div id="sobre" class="sobre-container">
 
           <div class="sobre-img reveal">
-              <img src="images/exemplo_sobre.png" alt="Foto Sobre Mim" loading="lazy">
+              <img src="assets/images/foto_sobre2.0.jpeg" alt="Foto Sobre Mim" loading="lazy">
           </div>
 
           <div class="sobre-text reveal">
               <p class="sobre-text-impactante text-gradient">
-                  SEMPRE FIQUEI NO MEIO.
+                  SOBRE MIM
               </p>
 
               <p class="sobre-text-impactante-2 text-gradient">
-              Testando. Errando. Ajustando.
+
               </p>
 
                     <div class="title-divider">
@@ -168,12 +192,6 @@
 
     <a href="sobre.html" class="btn-ver-mais">VER MAIS ➔</a>
 
-    <div class="social-icons">
-      <a href="https://instagram.com/gui_ribcosta" target="_blank"><i data-lucide="instagram"></i></a>
-      <a href="https://linkedin.com/in/guiribcosta" target="_blank"><i data-lucide="linkedin"></i></a>
-      <a href="https://github.com/gui-ribcosta" target="_blank"><i data-lucide="github"></i></a>
-      <a href="mailto:grcm171914@gmail.com"><i data-lucide="mail"></i></a>
-    </div>
 
   </div>
 
@@ -190,16 +208,21 @@
       <!-- ================= TEXTO (ESQUERDA) ================= -->
       <div class="projetos-text reveal">
 
-        <p class="projetos-text-grande text-gradient">
-          TUDO COMEÇOU ERRADO
+        <p class="projetos-text-impact text-gradient">
+          PROJETOS EM DESTAQUE
         </p>
+
+    <div class="title-divider left">
+      <span class="line"></span>
+      <span class="dot"></span>
+    </div>
 
         <p class="projetos-text-pequeno">
-          Nada fazia sentido no começo. Código quebrava. Ideias falhavam.
-        </p>
+          Uma seleção dos meus
+        </p>        
 
-        <p class="projetos-text-impact text-gradient">
-          MAS AÍ OS PROJETOS COMEÇARAM A FALAR POR MIM!
+        <p class="projetos-text-grande text-gradient">
+          MELHORES PROJETOS
         </p>
 
         <!-- ===== UI DESKTOP (setas abaixo do texto) ===== -->
@@ -231,65 +254,73 @@
           <div class="project-wrapper reveal">
             <div class="project-card">
 
-              <div class="project-media">
-                <img
-                  src="images/projetos.png"
-                  alt="Projeto 1"
-                  loading="lazy"
-                >
-              </div>
+  <div class="project-media">
+    <img src="assets/images/projeto_portfolio.png" alt="Projeto 1">
+  </div>
 
-              <div class="project-buttons">
-                <a href="#" class="btn-ver-projeto" target="_blank">
-                  VER PROJETO
-                </a>
-              </div>
+  <div class="project-content">
+    <h3 class="project-title">Portfólio Profissional</h3>
 
-            </div>
+    <p class="project-description">
+      Projeto desenvolvido para apresentar habilidades em desenvolvimento web, organização de código e construção de interfaces modernas e responsivas.
+    </p>
+
+    <div class="project-actions">
+      <a href="https://gui-ribeiro.vercel.app/index.html#inicio" class="btn-demo">Ver Site</a>
+      <a href="projects/portfolio.html" class="btn-details">Detalhes →</a>
+    </div>
+  </div>
+
+</div>
           </div>
 
           <!-- ===== PROJETO 2 ===== -->
           <div class="project-wrapper reveal">
             <div class="project-card">
 
-              <div class="project-media">
-                <img
-                  src="images/projetos.png"
-                  alt="Projeto 2"
-                  loading="lazy"
-                >
-              </div>
+  <div class="project-media">
+    <img src="assets/images/em_breve.png" alt="Projeto 2">
+  </div>
 
-              <div class="project-buttons">
-                <a href="#" class="btn-ver-projeto" target="_blank">
-                  VER PROJETO
-                </a>
-              </div>
+  <div class="project-content">
+    <h3 class="project-title">Em Breve...</h3>
 
-            </div>
+    <p class="project-description">
+      Em Breve...
+    </p>
+
+    <div class="project-actions">
+      <a href="#" class="btn-demo">Ver site</a>
+      <a href="#" class="btn-details">Detalhes →</a>
+    </div>
+  </div>
+
+</div>
           </div>
 
           <!-- ===== PROJETO 3 ===== -->
           <div class="project-wrapper reveal">
             <div class="project-card">
 
-              <div class="project-media">
-                <img
-                  src="images/projetos.png"
-                  alt="Projeto 3"
-                  loading="lazy"
-                >
-              </div>
+  <div class="project-media">
+    <img src="assets/images/em_breve.png" alt="Projeto 13">
+  </div>
 
-              <div class="project-buttons">
-                <a href="#" class="btn-ver-projeto" target="_blank">
-                  VER PROJETO
-                </a>
-              </div>
+  <div class="project-content">
+    <h3 class="project-title">Em Breve...</h3>
 
-            </div>
-          </div>
+    <p class="project-description">
+      Em Breve...
+    </p>
 
+    <div class="project-actions">
+      <a href="#" class="btn-demo">Ver Site</a>
+      <a href="#" class="btn-details">Detalhes →</a>
+    </div>
+  </div>
+
+</div>
+</div>
         </div>
 
         <!-- ===== UI MOBILE (embaixo do carrossel) ===== -->
@@ -331,53 +362,54 @@
 
         <!-- CARD 1 -->
         <div class="cert-card-principal">
-          <img src="images/projetos.png" alt="Certificação 1">
+          <img src="assets/images/Certificado SFPC.png" alt="Certificação 1">
           <div class="cert-info">
-            <p>Google IT Support<br>AWS Cloud Practitioner<br>Formação Front-End – Alura</p>
+            <p>CERTIPROF<br>
+Scrum Foundation Professional Certificate (SFPC)<br> Código: 101767790</p>
           </div>
         </div>
 
         <!-- CARD 2 -->
         <div class="cert-card-principal">
-          <img src="images/projetos.png" alt="Certificação 2">
+          <img src="assets/images/Certificado_HTML.png" alt="Certificação 2">
           <div class="cert-info">
-            <p>Certificação 2<br>Certificação 2<br>Certificação 2</p>
+            <p>Ada Tech - HTML<br>Curso introdutório de HTML <br></p>
           </div>
         </div>
 
         <!-- CARD 3 -->
         <div class="cert-card-principal">
-          <img src="images/projetos.png" alt="Certificação 3">
+          <img src="assets/images/em_breve.png" alt="Certificação 3">
           <div class="cert-info">
-            <p>Certificação 3<br>Certificação 3<br>Certificação 3</p>
+            <p>Em breve...<br>Em breve...<br>Em breve...</p>
           </div>
         </div>
 
         <!-- CARD 4 -->
         <div class="cert-card-principal">
-          <img src="images/projetos.png" alt="Certificação 4">
+          <img src="assets/images/em_breve.png" alt="Certificação 4">
           <div class="cert-info">
-            <p>Certificação 4<br>Certificação 4<br>Certificação 4</p>
+            <p>Em breve...<br>Em breve...<br>Em breve...</p>
           </div>
         </div>
 
         <!-- CARD 5 -->
         <div class="cert-card-principal">
-          <img src="images/projetos.png" alt="Certificação 5">
+          <img src="assets/images/em_breve.png" alt="Certificação 5">
           <div class="cert-info">
-            <p>Certificação 5<br>Certificação 5<br>Certificação 5</p>
+            <p>Em breve...<br>Em breve...<br>Em breve...</p>
           </div>
         </div>
 
       </div> <!-- fim cert-card-container -->
 
       <!-- BOTÃO VER TODOS -->
-      <a href="certificados.html" class="btn-ver-todos">VER TODOS</a>
+      <a href="#certificados" class="btn-ver-todos">VER TODOS</a>
 
     </div> <!-- fim cert-wrapper -->
 
     <!-- ================= UI MOBILE ================= -->
-    <div class="cert-ui cert-ui-mobile">
+    <div class="carrossel-ui carrossel-ui-mobile certificados-ui-mobile">
       <div class="carrossel-arrows">
         <button class="carrossel-btn-prev mobile">&#10094;</button>
         <button class="carrossel-btn-next mobile">&#10095;</button>
@@ -394,18 +426,24 @@
     <!-- ================= TEXTO (DIREITA) ================= -->
     <div class="estudos-text reveal">
       <h3 class="estudos-text-grande text-gradient">NEM TUDO VEIO SÓ DA PRÁTICA...</h3>
+
+    <div class="title-divider center">
+      <span class="line"></span>
+      <span class="dot"></span>
+    </div>
+
       <p class="estudos-text-pequeno">ESTUDAR MUITO TAMBÉM FEZ PARTE DA MINHA TRAJETÓRIA.</p>
       <p class="estudos-text-pequeno-2">
-        Além da prática, busquei certificações reconhecidas para consolidar meu conhecimento técnico.
+        Busquei certificações reconhecidas para consolidar meu conhecimento técnico.
       </p>
 
       <!-- UI DESKTOP -->
-      <div class="carrossel-ui carrossel-ui-desktop">
+      <div class="carrossel-ui carrossel-ui-desktop certificados-ui-desktop">
         <div class="carrossel-arrows">
           <button class="carrossel-btn-prev">&#10094;</button>
           <button class="carrossel-btn-next">&#10095;</button>
         </div>
-        <div class="carrossel-indicators">
+        <div class="carrossel-indicators desktop">
           <span class="indicator active"></span>
           <span class="indicator"></span>
           <span class="indicator"></span>
@@ -513,20 +551,125 @@
     </div>
   </footer>
 
-  <!-- Lucide primeiro -->
-  <script src="https://unpkg.com/lucide@latest" defer></script>
+<!-- Lucide primeiro -->
+<script src="https://unpkg.com/lucide@latest" defer></script>
 
-  <!-- Seu JS depois -->
-  <script src="script.js" defer></script>
+<!-- Seus JS depois -->
+<script src="scripts/components.js"></script>
+<script src="scripts/ui.js"></script>
+<script src="scripts/main.js"></script>
 
-  <!-- Só depois disso você chama -->
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      lucide.createIcons();
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+  // 1️⃣ Inicializa ícones Lucide
+  lucide.createIcons();
+
+  // 2️⃣ Inicializa menu mobile com scroll suave
+  (function initMobileMenu() {
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const closeBtn = document.getElementById('closeMobileNav');
+    const overlay = document.getElementById('overlay');
+    const header = document.querySelector('.header');
+
+    mobileToggle?.addEventListener('click', () => {
+      mobileNav.classList.add('active');
+      overlay.classList.add('active');
     });
-  </script>
 
+    closeBtn?.addEventListener('click', () => {
+      mobileNav.classList.remove('active');
+      overlay.classList.remove('active');
+    });
 
+    overlay?.addEventListener('click', () => {
+      mobileNav.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+
+    mobileNav.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
+        if (!target) return;
+
+        mobileNav.classList.remove('active');
+        overlay.classList.remove('active');
+
+        const topPos = target.getBoundingClientRect().top + window.scrollY - header.offsetHeight;
+        window.scrollTo({ top: topPos, behavior: 'smooth' });
+      });
+    });
+  })();
+
+  // 3️⃣ Inicializa carrosséis
+  class Carrossel {
+    constructor(sectionSelector) {
+      this.section = document.querySelector(sectionSelector);
+      if (!this.section) return;
+
+      this.track = this.section.querySelector(".carrossel-track");
+      this.cards = Array.from(this.track.children);
+      this.index = 0;
+
+      const trackStyle = getComputedStyle(this.track);
+      this.gap = parseFloat(trackStyle.gap) || 0;
+
+      this.prevButtons = this.section.querySelectorAll(".carrossel-btn-prev");
+      this.nextButtons = this.section.querySelectorAll(".carrossel-btn-next");
+
+      this.indicatorsDesktop = this.section.querySelectorAll(".carrossel-ui-desktop .indicator");
+      this.indicatorsMobile = this.section.querySelectorAll(".carrossel-ui-mobile .indicator");
+
+      this.prevButtons.forEach(btn => btn.addEventListener("click", () => this.prev()));
+      this.nextButtons.forEach(btn => btn.addEventListener("click", () => this.next()));
+
+      this.indicatorsDesktop.forEach((dot, i) => 
+        dot.addEventListener("click", () => { this.index = i; this.update(); })
+      );
+      this.indicatorsMobile.forEach((dot, i) => 
+        dot.addEventListener("click", () => { this.index = i; this.update(); })
+      );
+
+      this.update();
+      window.addEventListener("resize", () => this.update());
+    }
+
+    getCardWidth() {
+      const card = this.cards[0];
+      const cardStyle = getComputedStyle(card);
+      const marginRight = parseFloat(cardStyle.marginRight) || 0;
+      return card.getBoundingClientRect().width + this.gap + marginRight;
+    }
+
+    update() {
+      const cardWidth = this.getCardWidth();
+      this.track.style.transform = `translateX(-${this.index * cardWidth}px)`;
+
+      const indicators = window.innerWidth >= 1024 
+        ? this.indicatorsDesktop 
+        : this.indicatorsMobile;
+
+      indicators.forEach(dot => dot.classList.remove("active"));
+      if (indicators[this.index]) indicators[this.index].classList.add("active");
+    }
+
+    prev() { this.index = (this.index - 1 + this.cards.length) % this.cards.length; this.update(); }
+    next() { this.index = (this.index + 1) % this.cards.length; this.update(); }
+  }
+
+  new Carrossel("#projetos");
+  new Carrossel("#certificados");
+
+  // 4️⃣ Inicializa slider infinito de certificações tech
+  const techTrack = document.querySelector('.cert-tech-track');
+  if (techTrack) {
+    [...techTrack.children].forEach(icon => techTrack.appendChild(icon.cloneNode(true)));
+    techTrack.classList.add('animate');
+  }
+});
+</script>
 
   </body>
   </html>

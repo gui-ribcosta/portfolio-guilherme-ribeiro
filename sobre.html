@@ -1,212 +1,195 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
+  <!-- CONFIGURAÇÕES BÁSICAS -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- TÍTULO DA PÁGINA (aba do navegador) -->
   <title>Sobre | Guilherme Ribeiro</title>
-  <link rel="stylesheet" href="pages.css">
-  <link rel="stylesheet" href="global.css">
-  
 
-  <!-- Devicon para linguagens, frameworks e ferramentas -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <!-- ESTILOS GERAIS DO PROJETO -->
+  <link rel="stylesheet" href="styles/global.css">      <!-- Estilos globais -->
+  <link rel="stylesheet" href="styles/components.css">  <!-- Componentes reutilizáveis -->
+  <link rel="stylesheet" href="styles/pages.css">       <!-- Estilos específicos da página Sobre -->
 
-<!-- Font Awesome para Power BI -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- FONT AWESOME (ícones principais usados na stack e header) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- BOXICONS (ícones extras como idioma e tema) -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
+
 <body class="sobre-body">
 
-  <!-- HEADER -->
-  <header class="curriculo-header">
-    <a href="index.html" class="action-btn back-btn">
-  <i class="fa-solid fa-arrow-left"></i>
-  <div class="action-text">
-    <strong>VOLTAR AO SITE</strong>
-  </div>
-</a>
+  <!-- ========================= -->
+  <!-- HEADER (TOPO DA PÁGINA) -->
+  <!-- ========================= -->
+   
+  <header class="sobre-header">
 
-    <div class="action-buttons">
-  <button class="action-btn" id="themeToggle">
-    <i class="fa-solid fa-moon"></i>
-    <div class="action-text">
-      <strong>Modo</strong>
-      <span>Claro / Escuro</span>
+    <!-- BOTÃO DE VOLTAR (lado esquerdo) -->
+    <a href="index.html" class="back-link"><i class="fa-solid fa-angle-left"></i>
+      Voltar ao Site
+    </a>
+
+    <!-- BOTÕES DO LADO DIREITO -->
+    <div class="header-right">
+
+      <!-- BOTÃO DE TROCA DE IDIOMA -->
+      <button class="icon-btn" id="langToggle">
+        <i class='bx bx-world'></i>
+        <span class="icon-tooltip">SELETOR DE IDIOMA</span>
+      </button>
+
+      <!-- BOTÃO DE TROCA DE TEMA (claro/escuro) -->
+      <button class="icon-btn" id="themeToggle">
+        <i class='bx bx-sun'></i>
+        <span class="icon-tooltip">MODO CLARO</span>
+      </button>
+
     </div>
-  </button>
-
-  <button class="action-btn" id="langToggle">
-    <i class="fa-solid fa-globe"></i>
-    <div class="action-text">
-      <strong>Idioma</strong>
-      <span>Português / English</span>
-    </div>
-  </button>
-</div>
-
   </header>
 
+  <!-- ========================= -->
   <!-- CONTEÚDO PRINCIPAL -->
+  <!-- ========================= -->
+
   <main class="sobre-wrapper">
 
-    <!-- SEÇÃO 1: INTRO -->
-    <section class="sobre-intro">
-      <div class="sobre-img">
-        <img src="images/exemplo_sobre.png" alt="Foto de Guilherme Ribeiro">
-      </div>
-      <div class="sobre-text">
-        <h1 class="sobre-text text-gradient">Olá, eu sou o Guilherme!</h1>
-        <h2>ENGENHEIRO DE SOFTWARE</h2>
-        <p>
-          Desenvolvedor full-stack apaixonado por criar experiências digitais modernas e funcionais.
-          Tenho facilidade com sistemas, inglês B2, e foco em aprendizado contínuo.
-        </p>
+    <!-- ========================= -->
+    <!-- SEÇÃO: EXPERIÊNCIA -->
+    <!-- ========================= -->
+
+    <section class="experiencia-section">
+
+      <!-- Título da seção -->
+      <h2 class="section-title roxo">Experiência</h2>
+
+      <!-- Grid que organiza os cards -->
+      <div class="experiencia-grid">
+
+        <!-- Card de Experiência -->
+        <div class="experiencia-card">
+
+          <!-- Período -->
+          <div class="periodo-badge">
+            Fevereiro, 2026 — Atualmente
+          </div>
+
+          <!-- Cargo -->
+          <h3>FREELANCE DEVELOPER</h3>
+
+          <!-- Empresa -->
+          <span class="empresa">Autônomo</span>
+
+          <!-- Descrição principal -->
+          <p class="descricao">
+            Atuação como Designer & Desenvolvedora Freelancer, entregando soluções digitais completas, 
+            desde a concepção visual até o desenvolvimento técnico.
+          </p>
+
+          <!-- Lista de responsabilidades -->
+          <p class="pontos">
+            <span>•</span> Desenvolvimento de aplicações web com foco em usabilidade, organização de código e desempenho <br>
+            <span>•</span> Criação de interfaces responsivas utilizando HTML, CSS e JavaScript <br>
+            <span>•</span> Desenvolvimento de projetos práticos voltados ao aprendizado e entrega de soluções simples <br>
+            <span>•</span> Aplicação de conceitos de lógica de programação e programação orientada a objetos
+          </p>
+
+        </div>
       </div>
     </section>
 
-    <!-- SEÇÃO 2: FORMAÇÕES ACADÊMICAS -->
-<section class="timeline-section">
-  <h2 class="timeline-title text-gradient">Formação Acadêmica</h2>
-  <p class="timeline-subtitle">MINHA BASE TÉCNICA COMPLETA:</p>
+    <!-- ========================= -->
+    <!-- SEÇÃO: FORMAÇÃO ACADÊMICA -->
+    <!-- ========================= -->
 
-  <div class="timeline-wrapper">
-    <!-- Linha do tempo -->
-    <div class="timeline-line"></div>
+    <section class="formacao-section">
 
-    <!-- Card 1 -->
-    <div class="timeline-card">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <span class="timeline-period">2022 - 2026</span>
-        <h4>Análise e Desenvolvimento de Sistemas - IBMR</h4>
-        <p>Curso focado em programação, desenvolvimento web, bancos de dados e boas práticas de engenharia de software.</p>
+      <h2 class="section-title">Formação Acadêmica</h2>
+
+      <div class="formacao-grid">
+
+        <!-- Curso 1 -->
+        <div class="formacao-card">
+          <div class="status andamento">Em andamento</div>
+          <h3>Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
+          <span class="instituicao">IBMR</span>
+          <span class="periodo">01/2026 - 07/2026</span>
+          <p>
+            Graduação focada em desenvolvimento de software, arquitetura de sistemas e tecnologias modernas.
+          </p>
+        </div>
+
+        <!-- Curso 2 -->
+        <div class="formacao-card">
+          <div class="status andamento">Em andamento</div>
+          <h3>Bacharelado em Ciência da Computação</h3>
+          <span class="instituicao">IBMR</span>
+          <span class="periodo">2026 - 2028</span>
+          <p>
+            Formação técnica em programação orientada a objetos, banco de dados e engenharia de software.
+          </p>
+        </div>
+
       </div>
-    </div>
+    </section>
 
-    <!-- Card 2 -->
-    <div class="timeline-card">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <span class="timeline-period">2026 - 2029</span>
-        <h4>Ciência da Computação - IBMR</h4>
-        <p>Estudo aprofundado de algoritmos, estruturas de dados, inteligência artificial e desenvolvimento de sistemas complexos.</p>
+    <!-- ========================= -->
+    <!-- SEÇÃO: STACK TECNOLÓGICA -->
+    <!-- ========================= -->
+
+    <section class="tech-stack">
+
+      <h2 class="section-title">Stack Tecnológica</h2>
+
+      <div class="stack-wrapper">
+
+        <!-- Linha superior: Front e Back lado a lado -->
+        <div class="stack-row">
+
+          <!-- FRONT-END -->
+          <div class="stack-card">
+            <h3>Front-end</h3>
+            <div class="stack-icons">
+              <i class="fa-brands fa-html5"></i>
+              <i class="fa-brands fa-css3-alt"></i>
+              <i class="fa-brands fa-js"></i>
+            </div>
+          </div>
+
+          <!-- BACK-END -->
+          <div class="stack-card">
+            <h3>Back-end</h3>
+            <div class="stack-icons">
+              <i class="fa-brands fa-python"></i>
+              <i class="fa-solid fa-code"></i> <!-- Representa C/C++ -->
+              <i class="fa-solid fa-database"></i> <!-- Representa MySQL -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Linha inferior centralizada: Ferramentas -->
+        <div class="stack-row center-row">
+          <div class="stack-card tools-card">
+            <h3>Ferramentas</h3>
+            <div class="stack-icons">
+              <i class="fa-brands fa-git-alt"></i>
+              <i class="fa-brands fa-github"></i>
+              <i class="fa-brands fa-visual-studio-code"></i>
+              <i class="fa-brands fa-figma"></i>
+              <i class="fa-solid fa-file-excel"></i>
+              <i class="fa-solid fa-chart-column"></i> <!-- Power BI -->
+            </div>
+          </div>
+        </div>
+
       </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="timeline-card">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <span class="timeline-period">2026 - 2027</span>
-        <h4>Curso BIT - L'Oréal</h4>
-        <p>Capacitação prática em tecnologias digitais aplicadas a marketing, análise de dados e soluções corporativas.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SEÇÃO 3: STACKS TECNOLÓGICAS -->
-<section class="tech-stack">
-  <h2 class="stack-title">Stacks Tecnológicas</h2>
-  <p class="stack-subtitle">TECNOLOGIAS QUE UTILIZO NO MEU DIA A DIA</p>
-
-  <!-- LINGUAGENS -->
-  <h3 class="stack-category"><span>Linguagens</span></h3>
-  <div class="stack-grid">
-    <div class="stack-item">
-      <img src="https://cdn.simpleicons.org/html5/ffffff" alt="HTML5">
-      <h4>HTML</h4>
-      <p>Linguagem de marcação para estruturar páginas web.</p>
-    </div>
-    <div class="stack-item">
-      <i class="devicon-html5-plain colored"></i>
-      <h4>CSS</h4>
-      <p>Estiliza páginas web com cores, layouts e animações.</p>
-    </div>
-    <div class="stack-item">
-      <img src="https://cdn.simpleicons.org/javascript/ffffff" alt="JavaScript">
-      <h4>JavaScript</h4>
-      <p>Linguagem de programação para interatividade no front-end.</p>
-    </div>
-    <div class="stack-item">
-      <img src="https://cdn.simpleicons.org/python/ffffff" alt="Python">
-      <h4>Python</h4>
-      <p>Linguagem versátil usada para back-end, scripts e IA.</p>
-    </div>
-    <div class="stack-item">
-      <img src="https://cdn.simpleicons.org/c/ffffff" alt="C">
-      <h4>C</h4>
-      <p>Linguagem de programação de baixo nível e alto desempenho.</p>
-    </div>
-    <div class="stack-item">
-      <img src="https://cdn.simpleicons.org/cplusplus/ffffff" alt="C++">
-      <h4>C++</h4>
-      <p>Extensão do C com orientação a objetos e performance.</p>
-    </div>
-  </div>
-
-  <!-- FRAMEWORKS -->
-  <h3 class="stack-category"><span>Frameworks</span></h3>
-  <div class="stack-grid">
-    <div class="stack-item">
-      <img src="https://cdn.simpleicons.org/tailwindcss/ffffff" alt="Tailwind CSS">
-      <h4>Tailwind CSS</h4>
-      <p>Framework CSS utilitário para construir layouts rápidos.</p>
-    </div>
-    <div class="stack-item">
-      <img src="https://cdn.simpleicons.org/bootstrap/ffffff" alt="Bootstrap">
-      <h4>Bootstrap</h4>
-      <p>Framework CSS para design responsivo e componentes prontos.</p>
-    </div>
-  </div>
-
-  <!-- BANCOS DE DADOS -->
-  <h3 class="stack-category"><span>Bancos de Dados</span></h3>
-  <div class="stack-grid">
-    <div class="stack-item">
-      <img src="https://cdn.simpleicons.org/mysql/ffffff" alt="MySQL">
-      <h4>MySQL</h4>
-      <p>Banco de dados relacional popular e confiável.</p>
-    </div>
-    <div class="stack-item">
-      <i class="fa-solid fa-file-excel"></i>
-      <h4>Excel</h4>
-      <p>Planilhas e análise de dados para relatórios e dashboards.</p>
-    </div>
-    <div class="stack-item">
-      <i class="fa-brands fa-microsoft"></i>
-      <h4>Power BI</h4>
-      <p>Ferramenta de visualização e análise de dados avançada.</p>
-    </div>
-  </div>
-
-  <!-- FERRAMENTAS -->
-  <h3 class="stack-category"><span>Ferramentas</span></h3>
-  <div class="stack-grid">
-    <div class="stack-item">
-      <i class="devicon-visualstudio-plain"></i>
-      <h4>VS Code</h4>
-      <p>Editor de código moderno com extensões poderosas.</p>
-    </div>
-    <div class="stack-item">
-      <img src="https://cdn.simpleicons.org/figma/f24e1e" alt="Figma">
-      <h4>Figma</h4>
-      <p>Ferramenta de design e prototipagem colaborativa.</p>
-    </div>
-    <div class="stack-item">
-      <img src="https://cdn.simpleicons.org/git/f05032" alt="Git">
-      <h4>Git</h4>
-      <p>Sistema de controle de versão distribuído.</p>
-    </div>
-    <div class="stack-item">
-      <img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub">
-      <h4>GitHub</h4>
-      <p>Plataforma de hospedagem de código e colaboração.</p>
-    </div>
-  </div>
-</section>
-
-
+    </section>
 
   </main>
 
