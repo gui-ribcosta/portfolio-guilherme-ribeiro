@@ -8,7 +8,7 @@
 
 ## 💻 Preview do Projeto
 
-![Preview do Portfólio](./images/preview.gif)
+![Preview do Portfólio](./assets/images/preview_portfolio.gif)
 
 ---
 
@@ -32,6 +32,11 @@ O portfólio inclui:
 
 > 🔄 Projeto em constante evolução. Cada atualização representa uma nova etapa do meu desenvolvimento técnico.
 
+Próximas atualizaçÕes:
+- Tradução para o inglês ao clicar no botão
+- Modo claro
+- Atualização de certificados e projetos
+
 ---
 
 ## 🛠️ Tecnologias Utilizadas
@@ -47,6 +52,7 @@ O portfólio inclui:
 
 ## 📫 Contato
 
-LinkedIn: [COLOQUE_AQUI_SEU_LINK](https://www.linkedin.com/in/guiribcosta/)
-Email: grcm171914@gmail.com
+- LinkedIn: [Clique Aqui!](https://www.linkedin.com/in/guiribcosta/)
+- Instagram: [Clique Aqui!](https://instagram.com/gui_ribcosta)
+- E-mail: grcm171914@gmail.com
 
